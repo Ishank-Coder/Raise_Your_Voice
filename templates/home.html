@@ -5,6 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .container{
+            height: 30px;
+            width: 200px;
+            position: relative;
+            background-color: green;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        .Dropdown{
+            height: auto;
+            width: 200px;
+            background-color: pink;
+            position: absolute;
+            left: 0;
+            display: none;
+        }
+        .miet{
+            color: black;
+            display: block;
+            text-align: left;
+            padding-left: 5px;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .miet:hover
+        {
+            background-color: green;
+            color: white;
+
+        }
+        .container:hover .Dropdown
+        {
+            display: block;
+        }
+    </style>
 </head>
 <body link="#000" alink="#000" vlink="#000">
     <!-- <h3 >
@@ -36,15 +78,15 @@
         </div>
     </h1>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <h3 align="center">
-        <div class="Dropdown">
-            <label for="Colleges">File Your Grievance</label>
-            <select name="Colleges" id="clgs">
-                <option value="Miet">MIET</option>
-                <option value="abes">ABES</option>
-                <option value="jaypee">Jaypee</option>
-            </select>
+    <div align="center">
+        <div class="container">
+            File your grievance
+            <div class="Dropdown">
+                <a href="#" class="miet">MIET</a>
+                <a href="#" class="miet">ABES</a>
+                <a href="#" class="miet">JAYPEE</a>
+            </div>
         </div>
-    </h3>
+    </div>
 </body>
 </html>
