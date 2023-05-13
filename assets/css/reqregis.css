@@ -1,0 +1,25 @@
+
+*{
+    margin : 0px;
+    padding: 0px;
+}
+
+.navi{
+    width: 100%;
+    height: 40px;
+    background: #6BE9D1;
+    display: flex;
+    
+}
+
+.login{
+    font-weight: 100;
+   justify-content: right;
+}
+
+.container{
+    width:100%;
+    height:100%;
+    display :flex;
+    flex-wrap: wrap;
+}
