@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Form Details with Feedback</title>
+</head>
+<body>
+    <h1>Student Form Details</h1>
+
+    <h2>Personal Information</h2>
+    <p><strong>Name:</strong> {{ name }}</p>
+    <p><strong>Email:</strong> {{ email }}</p>
+    <p><strong>Semester:</strong> {{ semester }}</p>
+    <p><strong>Roll Number:</strong> {{ roll_number }}</p>
+    <p><strong>Branch:</strong> {{ branch }}</p>
+
+    <h2>Feedback</h2>
+    <form action="/submit-feedback" method="post">
+        <label for="feedback">Feedback:</label><br>
+        <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea><br>
+        <input type="submit" value="Submit Feedback">
+    </form>
+</body>
+</html>
