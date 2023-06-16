@@ -1,20 +1,23 @@
 from flask import Flask, session, request, render_template,redirect
 import pyrebase
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import db
 
 
-config = {
-  "apiKey": "AIzaSyBkydxJGHz5lGp4Tk7c3EeRPNWSLu_HwZM",
-  "authDomain": "grievance-2ba24.firebaseapp.com",
-  "databaseURL": "https://grievance-2ba24-default-rtdb.firebaseio.com",
-  "projectId": "grievance-2ba24",
-  "storageBucket": "grievance-2ba24.appspot.com",
-  "messagingSenderId": "1064794325729",
-  "appId": "1:1064794325729:web:b04525a038a415f1706da0",
-  "measurementId": "G-ZJF766CKXD",
-  "databaseURL": ''
+
+cred = credentials.Certificate('assets//grievance-2ba24-firebase-adminsdk-kg434-19e2ca69b9.json')
+firebase_admin.initialize_app(cred, {
+    'databaseURL': 'https://grievance-2ba24-default-rtdb.firebaseio.com/'
+})
+
+@app.route('/process_form', methods=['POST'])
+def process_form():
+    name = request.form.get('name')
+    send_data(name)
     
-}
-
-
-firebase = pyrebase.initialize_app(config)
-
+def send_data(name):
+    # data = request.json  # Assuming you're receiving data as JSON in the request
+    ref = db.reference('names')  # Replace with the desired location in the database
+    ref.child("name").push(name)
+    return 'Data sent successfully'

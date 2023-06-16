@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- <link rel="stylesheet" href="assets/css/reqregis.css"> -->
-    <link rel="stylesheet" href="/assets/css/reqregis.css" >
-</head>
-<body>
+    <link rel="stylesheet" href="/assets/css/reqregis.css">
+  </head>
+  <body>
     <!-- <nav class="navi">
         <div class="logo">
             <img src=""">
@@ -18,44 +18,43 @@
         </div>
 
     </nav> -->
-    section.a
+
     <div class="container1">
-    <form action="/" method="POST">
+      <form id="myform" action="/process_form" method="POST">
         <label for="TOG">Type of Grievance</label>
 
-        <select name="TOG" placeholder ="Type of Grievance" value="Type of Grievance">
-            <option value="A">A</option>
-            <option value="A">B</option>
-            <option value="A">C</option>
-        <select name="TOG" value="Type of Grievance">
-        
-        <label for="tog">Student</label>
+        <select name="TOG" placeholder="Type of Grievance">
+          <option value="Anti-Ragging">Anti-Ragging</option>
+          <option value="Discipline">Discipline</option>
+          <option value="Exam">Exam</option>
+        </select>
 
-        <input type="radio" name="Student" value="ff">
+            <label for="tog">Student</label>
 
-        <label for="tog">Student</label>
+            <input type="radio" name="Student" value="0">
 
-        <input type="radio" name="Faculty" value="ff">
-        <input type="text" name="Student" placeholder="Name">
-        
-        
-        <label for="cars">gender</label>
-        <select name="TOG">
-            <option value="A">Male</option>
-            <option value="A">Female</option>
-            <option value="A">prefer not to say</option>
-        <select name="TOG" value="Type of Grievance">
-        <input type="text" name="Student" placeholder="Email">
-        <input type="text" name="Student" placeholder="Mobile Number">
-        <input type="text" name="Student" placeholder="Semester">
-        <input type="text" name="Student" placeholder="AKTU Roll No.">
-        <input type="text" name="Student" placeholder="Branch">
-        <input type="submit" value="submit">
-              
+            <label for="tog">Faculty</label>
 
+            <input type="radio" name="Student" value="1">
+            <input type="text" name="name" placeholder="Name">
 
-    </form>
-</div>
+            <label for="cars">gender</label>
 
-</body>
-</html>
+            <select name="gender">
+              <option>Male</option>
+              <option>Female</option>
+              <option>prefer not to say</option>
+            </select>
+                <input type="text" name="Email" placeholder="Email">
+                <input type="text" name="num" placeholder="Mobile Number">
+                <input type="text" name="sem" placeholder="Semester">
+                <input type="text" name="rollno" placeholder="AKTU Roll No.">
+                <input type="text" name="branch" placeholder="Branch">
+                <input type="submit" value="submit">
+
+              </form>
+
+            </div>
+
+          </body>
+        </html>
