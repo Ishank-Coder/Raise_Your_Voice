@@ -29,7 +29,7 @@ def admin():
 def taking():
     to=display(db)
 
-    return render_template('action.html',t=to.values())
+    return render_template('action.html',to = to)
 
 
 
