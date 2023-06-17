@@ -17,10 +17,28 @@
     {% endfor %}
     <h2>Feedback</h2>
 
-    <form action="/submit-feedback" method="post">
-        <label for="feedback">Feedback:</label><br>
-        <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea><br>
+    <form action="/submit-feedback" method="post" enctype='multipart/form-data'>
+        <label for="atbt">Action To Be Taken:</label><br>
+        <textarea id="atbt" name="atbt" rows="4" cols="50"></textarea><br>
+        <label for="atbt">Proof of Action</label><br>
+
+        <label for="atbt">Further review needed</label><br>
+        <label for="fr">YES</label>
+
+        <input type="radio" name="fr" value="0">
+
+        <label for="fr">NO</label>
+
+        <input type="radio" name="fr" value="1"><br>
+
         <input type="submit" value="Submit Feedback">
+
     </form>
+    <form method='POST' enctype='multipart/form-data'>
+        {{form.hidden_tag()}}
+        {{form.file()}}
+        {{form.submit()}}
+    </form>
+
 </body>
 </html>
