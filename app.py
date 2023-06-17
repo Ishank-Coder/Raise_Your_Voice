@@ -6,8 +6,20 @@ from firebase_admin import credentials
 from firebase_admin import db
 from dataEntry import process_form
 from dataDisplay import display
+from flask_wtf import FlaskForm
+from wtforms import FileField, SubmitField
+from werkzeug.utils import secure_filename
+import os
+from wtforms.validators import InputRequired
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'supersecretkey'
+app.config['UPLOAD_FOLDER'] = 'static/files'
+
+class UploadFileForm(FlaskForm):
+    file = FileField("File", validators=[InputRequired()])
+    submit = SubmitField("Upload File")
+
 
 @app.route("/", methods=["GET", "POST"])
 def home():
@@ -28,9 +40,12 @@ def admin():
 @app.route("/action.html",methods=["GET", "POST"])
 def taking():
     to=display(db)
-
-    return render_template('action.html',to = to)
-
+    form = UploadFileForm()
+    if form.validate_on_submit():
+        file = form.file.data # First grab the file
+        file.save(os.path.join(os.path.abspath(os.path.dirname(__file__)),app.config['UPLOAD_FOLDER'],secure_filename(file.filename))) # Then save the file
+        return "File has been uploaded."
+    return render_template('action.html',to = to, form=form)
 
 
 cred = credentials.Certificate('assets//grievance-2ba24-firebase-adminsdk-kg434-19e2ca69b9.json')
