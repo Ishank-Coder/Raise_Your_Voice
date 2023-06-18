@@ -5,88 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <style>
-        *{
-            box-sizing: border-box;
-        }
-        .container{
-            height: 30px;
-            width: 200px;
-            position: relative;
-            background-color: green;
-            color: white;
-            text-align: center;
-            line-height: 30px;
-            font-size: 15px;
-            cursor: pointer;
-        }
-        .Dropdown{
-            height: auto;
-            width: 200px;
-            background-color: pink;
-            position: absolute;
-            left: 0;
-            display: none;
-        }
-        .miet{
-            color: black;
-            display: block;
-            text-align: left;
-            padding-left: 5px;
-            font-size: 14px;
-            text-decoration: none;
-        }
-        .miet:hover
-        {
-            background-color: green;
-            color: white;
-
-        }
-        .container:hover .Dropdown
-        {
-            display: block;
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/css/home.css">
 </head>
 <body link="#000" alink="#000" vlink="#000">
-    <!-- <h3 >
-        <font face="Lato" size="6" align="left">
-            <img src="Group 25.png">
-        </font>
-        <font face="cinzel" align="right">
-            <a href="#">Login</a>
-        </font>
-    </h3> -->
-    <nav>
-        <font face="Lato" size="6" >
-            <img src="Group 25.png">
-         </font>
-         <font face="cinzel">
-            <a href="#">Login</a>
-        </font>
-    </nav>
-    <br /><br /><br /><br />
-    <h1 align="center">
-        <div>
-            <font face="Lato" color="#000" size="7">
-                Need help?
-                <br>
-                Reduce the gap
-                <br>
-                Use Grievance app
-            </font>
-        </div>
-    </h1>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <div align="center">
-        <div class="container">
-            File your grievance
-            <div class="Dropdown">
-                <a href="#" class="miet">MIET</a>
-                <a href="#" class="miet">ABES</a>
-                <a href="#" class="miet">JAYPEE</a>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <div class="logo"><img src="/assets/images/Group 25.png" alt="logo"></div>
+                <li> <a href="#home">Home</a></li>
+                <li> <a href="#about">About</a></li>
+                <li> <a href="#services">Services</a></li>
+                <li> <a href="#contact">Contact Us</a></li>
+            </ul>
+            <div class="rightnav">
+                <button class="login-btn">Login</button>
             </div>
-        </div>
-    </div>
+        </nav>
+
+        <section class="background firstsection">
+            <div class="box-main">
+                <div class="firsthalf">
+                    <p class="text-big">
+                        Facing any nuisance? 
+                        <br>
+                        File a Grievance!
+                    </p>
+                </div>
+                <div class="secondhalf">
+                    <img src="/assets/images/image 1.png">
+                </div>
+            </div>
+        </section>
+        <section class="fyg">
+            <button class="fyg-btn">
+                File your grievance
+            </button>
+        </section>
 </body>
 </html>
