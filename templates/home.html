@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="/assets/css/home.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 </head>
 <body link="#000" alink="#000" vlink="#000">
     <!-- <h3 >
@@ -25,7 +25,7 @@
         </font>
     </nav> -->
         <nav class="navbar">
-            <div class="logo"><img src="/assets/images/Group 25.png" alt="logo"></div>
+            <div class="logo"><img src="{{url_for('static', filename= 'images/Group25.png')}}" alt="logo"></div>
             <ul class="nav-list">
                 <li> <a href="#home">Home</a></li>
                 <li> <a href="#about">About</a></li>
@@ -56,7 +56,7 @@
                     </p>
                 </div>
                 <div class="secondhalf">
-                    <img src="/assets/images/image 1.png">
+                    <img src="{{url_for('static', filename='images/image1.png')}}">
                 </div>
             </div>
         </section>
@@ -82,5 +82,5 @@
         </div>
     </div> -->
 </body>
-<script type="text/javascript" src="/assets/js/home.js"></script>
+<script type="text/javascript" src="{{url_for('static',filename='js/home.js')}}"></script>
 </html>
