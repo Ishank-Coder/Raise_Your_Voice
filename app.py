@@ -48,7 +48,7 @@ def taking():
     return render_template('action.html',to = to, form=form)
 
 
-cred = credentials.Certificate('assets//grievance-2ba24-firebase-adminsdk-kg434-19e2ca69b9.json')
+cred = credentials.Certificate('static//grievance-2ba24-firebase-adminsdk-kg434-599944587c.json')
 firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://grievance-2ba24-default-rtdb.firebaseio.com/'
 })
