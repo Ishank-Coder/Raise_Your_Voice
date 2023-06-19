@@ -3,20 +3,20 @@
     padding: 0;
 }
 .logo{
-    width: 161px;
+    width: 20%;
     display: flex;
-    /* justify-content: center; */
+    justify-content: flex-start;
     align-items: center;
 }
 .logo img{
-    width: 33%;
+    width: 50px;
 }
 .navbar{
     display: flex;
     min-height:70px;
     justify-content: space-between;
-    align-items: center;
     padding: 0 24px;
+    width: 100%;
 }
 
 .nav-list{
@@ -28,7 +28,7 @@
 }
 .nav-list li{
     list-style: none;
-    padding: 30px;
+    padding: 28px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -184,7 +184,10 @@
         {
             display: block;
         } */
-
+.hamcon{
+    
+    display: none;
+}
 .hamburger{
     display : none;
     cursor: pointer;
@@ -204,6 +207,13 @@
 }
 
 @media(max-width:768px){
+    .hamcon{
+        display: flex;
+        z-index: 1;
+        /* top:10px; */
+        margin-top: 20px;
+        margin-right: 0;
+    }
     .hamburger{
         display: block;
         z-index: 1;
