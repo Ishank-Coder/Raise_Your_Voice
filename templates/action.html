@@ -2,8 +2,19 @@
 <html>
 <head>
     <title>Student Form Details with Feedback</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/action.css') }}">
 </head>
 <body>
+   
+    <div class="maincontainer">
+        <div class="hamcont">
+            <div class="hamburgers">
+                <span class="bars"></span>
+                <span class="bars"></span>
+                <span class="bars"></span>
+            </div>
+        </div>
+    <div class="leftcontainer">
     <h1>Student Form Details</h1>
     
     <h2>Personal Information</h2>
@@ -15,8 +26,9 @@
     <p><strong>Branch:</strong> {{ l }}</p> -->
 
     {% endfor %}
+    </div>
     <h2>Feedback</h2>
-
+    <div class="rightcontainer">
     <form action="/submit-feedback" method="post" enctype='multipart/form-data'>
         <label for="atbt">Action To Be Taken:</label><br>
         <textarea id="atbt" name="atbt" rows="4" cols="50"></textarea><br>
@@ -39,6 +51,8 @@
         {{form.file()}}
         {{form.submit()}}
     </form>
-
+    </div>
+    </div>
 </body>
+<script type='text/javascript' src="{{ url_for('static', filename='js/action.js') }}"></script>
 </html>

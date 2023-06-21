@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/grlist.css') }}">
+</head>
+<body>
+    <section class="new">
+        <div class="main">
+            <div class="heading">
+                <h1 class="heading">New Tickets</h1>
+            </div>
+              <div class="tbl-content">
+                <table cellpadding="0" cellspacing="0" border="0">
+                  <tbody>
+                    {% for name in new %}
+                    <tr>
+                      <td>{{ name }}</td>
+                    </tr>
+                    {% endfor %}
+                    
+                  </tbody>
+                </table>
+              </div>
+        </div>
+
+
+    </section>
+    <section class="new">
+        <div class="main">
+            <div class="heading">
+                <h1 class="heading">Ongoing Tickets</h1>
+            </div>
+            
+              <div class="tbl-content">
+                <table cellpadding="0" cellspacing="0" border="0">
+                  <tbody>
+                    {% for name in pending %}
+                    <tr>
+                      <td>{{ name }}</td>
+                    </tr>
+                    {% endfor %}
+                    
+                  </tbody>
+                </table>
+              </div>
+        </div>
+
+
+    </section>
+    <section class="new">
+        <div class="main">
+            <div class="heading">
+                <h1 class="heading">Closed Tickets</h1>
+            </div>
+           
+              <div class="tbl-content">
+                <table cellpadding="0" cellspacing="0" border="0">
+                  <tbody>
+                    {% for name in closed %}
+                    <tr>
+                      <td>{{ name }}</td>
+                    </tr>
+                    {% endfor %}
+                    
+                  </tbody>
+                </table>
+              </div>
+        </div>
+
+
+    </section>
+<script type="text/javascript" src="{{ url_for('static',filename='js/grlist.js') }}"></script>
+</body>
+
+
+</html>
