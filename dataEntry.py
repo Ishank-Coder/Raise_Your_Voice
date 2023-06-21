@@ -1,20 +1,15 @@
 def process_form(request,db):
     from flask import Flask, redirect, render_template, url_for 
-    name = request.form.get('name')
-    email = request.form.get('email')
-    number = request.form.get('num')
-    sem = request.form.get('sem')
-    branch = request.form.get('branch')
-    tog = request.form.get('TOG')
-    Rollno = request.form.get('rollno')
-    gender = request.form.get('gender')
-    selected_option = request.form.get('Student')
-    if selected_option == 0:
-        who = "Student"
-    elif selected_option == 1:
-        who = "Faculty"
-    else:
-        who = "Null"
+    name = request.form.get('Name')
+    email = request.form.get('Mail')
+    number = request.form.get('Number')
+    sem = request.form.get('Semester')
+    branch = request.form.get('Branch')
+    tog = request.form.get('Detail')
+    Rollno = request.form.get('RollNo')
+    gender = request.form.get('Gender')
+    who = request.form.get('Type')
+    
     data = {"name": name,"gender" : gender,"email": email,"num": number,"sem": sem,"branch": branch,"RollNo":Rollno ,"Type":who}
     send_data(tog,data,db)
     

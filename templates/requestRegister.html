@@ -4,57 +4,106 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    
     <!-- <link rel="stylesheet" href="assets/css/reqregis.css"> -->
-    <link rel="stylesheet" href="/assets/css/reqregis.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reqregis.css') }}">
   </head>
-  <body>
-    <!-- <nav class="navi">
-        <div class="logo">
-            <img src=""">
-        </div>
-        <div class="login">
-            <a href="#">Login</a>
-        </div>
+<body>
 
-    </nav> -->
+    <main>
+        <section class="learn">
+           <h1>File your Grievance.<br>here with Ease !!</h1>
+           <img src="{{url_for('static', filename= 'images/image 3.png')}}" style="width:350px;height:400px;">
+           
+        </section>
 
-    <div class="container1">
-      <form id="myform" action="/process_form" method="POST">
-        <label for="TOG">Type of Grievance</label>
+        <section>
+            <!-- <div class="cta">
+                <p><span>Try it free 7 days</span> then $20/mo. thereafter</p>
+            </div> -->
 
-        <select name="TOG" placeholder="Type of Grievance">
-          <option value="Anti-Ragging">Anti-Ragging</option>
-          <option value="Discipline">Discipline</option>
-          <option value="Exam">Exam</option>
-        </select>
-
-            <label for="tog">Student</label>
-
-            <input type="radio" name="Student" value="0">
-
-            <label for="tog">Faculty</label>
-
-            <input type="radio" name="Student" value="1">
-            <input type="text" name="name" placeholder="Name">
-
-            <label for="cars">gender</label>
-
-            <select name="gender">
-              <option>Male</option>
-              <option>Female</option>
-              <option>prefer not to say</option>
-            </select>
-                <input type="text" name="Email" placeholder="Email">
-                <input type="text" name="num" placeholder="Mobile Number">
-                <input type="text" name="sem" placeholder="Semester">
-                <input type="text" name="rollno" placeholder="AKTU Roll No.">
-                <input type="text" name="branch" placeholder="Branch">
-                <input type="submit" value="submit">
-
-              </form>
-
+            
+    <div class="sign-up">
+        <form action="/process_form" method="POST" class="signup-form" >
+           
+            <div class="form-btn">
+                <input type="text" placeholder="Name" name="Name" required>
+                <img class="icon" src="./Images/icon-error.svg" alt="Error">
+                <p class="msg">First Name cannot be empty</p>
             </div>
 
-          </body>
-        </html>
+            <div class="form-btn">
+              <input type="text" placeholder="Gender" name="Gender" required>
+              <img class="icon" src="./Images/icon-error.svg" alt="Error">
+              <p class="msg">First Name cannot be empty</p>
+          </div>
+          
+          
+          
+
+            <div class="form-btn">
+                <input type="text" placeholder="College E-mail ID " name="Mail" required>
+                <img class="icon" src="./Images/icon-error.svg" alt="Error">
+                <p class="msg">First Name cannot be empty</p>
+            </div>
+
+            <div class="form-btn">
+                <input type="text" placeholder="Mobile Number" name="Number" required>
+                <img class="icon" src="./Images/icon-error.svg" alt="Error">
+                <p class="msg">First Name cannot be empty</p>
+            </div>
+
+            <div class="form-btn">
+                <input type="text" placeholder="Semester" name="Semester" required>
+                <img class="icon" src="./Images/icon-error.svg" alt="Error">
+                <p class="msg">First Name cannot be empty</p>
+            </div>
+
+            <div class="form-btn">
+                <input type="text" placeholder="AKTU Roll Number" name="RollNo" required>
+                <img class="icon" src="./Images/icon-error.svg" alt="Error">
+                <p class="msg">First Name cannot be empty</p>
+            </div>
+
+            <div class="form-btn">
+                <input type="text" placeholder="Branch" name="Branch" required>
+                <img class="icon" src="./Images/icon-error.svg" alt="Error">
+                <p class="msg">First Name cannot be empty</p>
+            </div>
+
+            <div class="form-btn">
+                <input type="text" placeholder="Date & Time of Incident" name="Date and Time" required>
+                <img class="icon" src="./Images/icon-error.svg" alt="Error">
+                <p class="msg">Last Name cannot be empty</p>
+            </div>
+
+            <div class="form-btn">
+                <input type="email" placeholder="Any Other Specific Details ?" name="Detail" required>
+                <img class="icon" src="./Images/icon-error.svg" alt="Error">
+                <p class="msg">Looks like this is not an email</p>
+            </div>
+
+            <div class="form-btn">
+              <img class="icon" src="./Images/icon-error.svg" alt="Error">
+              <select name="Type">  
+                  <option value="Select Your Grievance">Which Type</option>  
+                  <option value="BCA">Student</option>  
+                  <option value="BBA">Faculty</option>  
+                  <option value="B.Tech">Assistant Workers</option>  
+      
+                  
+                  </select>  
+              <p class="msg">First Name cannot be empty</p>
+          </div>
+
+           
+
+            <input id="submit-btn" type="submit" value="submit" id="btn">
+
+            <!-- <p class="terms">By clicking the button, you are agreeing to our <span><a href="#">Terms and Services</a></span></p> -->
+        </form>
+        </section>
+    </main>
+    
+</body>
+</html>
