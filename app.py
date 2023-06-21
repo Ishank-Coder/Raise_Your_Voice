@@ -11,6 +11,7 @@ from wtforms import FileField, SubmitField
 from werkzeug.utils import secure_filename
 import os
 from wtforms.validators import InputRequired
+import getDatalist
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'supersecretkey'
@@ -36,6 +37,14 @@ def registerReq():
 @app.route("/admin")
 def admin():
     return redirect(url_for("home"))
+
+@app.route("/grievancelist.html",methods=["GET", "POST"])
+def grievancelist():
+    new,pending,closed = getDatalist.getlist(request, db)
+    
+    
+    
+    return render_template("grievancelist.html",new=new,pending=pending,closed=closed)
 
 @app.route("/action.html",methods=["GET", "POST"])
 def taking():
