@@ -1,6 +1,5 @@
 from flask import Flask, redirect, render_template, url_for
 from flask import Flask, session, request, render_template,redirect
-import pyrebase
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
@@ -65,6 +64,10 @@ firebase_admin.initialize_app(cred, {
 def process_formrty():
     process_form(request,db)
     return redirect(url_for("home"))
+
+@app.route("/admindetail.html",methods=["GET", "POST"])
+def admindetail():
+    return render_template("admindetail.html")
 
 if __name__ == '__main__':
     app.run()
