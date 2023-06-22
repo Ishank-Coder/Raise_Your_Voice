@@ -1,6 +1,5 @@
 from flask import Flask, redirect, render_template, url_for
 from flask import Flask, session, request, render_template,redirect
-import pyrebase
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
@@ -11,6 +10,7 @@ from wtforms import FileField, SubmitField
 from werkzeug.utils import secure_filename
 import os
 from wtforms.validators import InputRequired
+import getDatalist
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'supersecretkey'
@@ -37,6 +37,13 @@ def registerReq():
 def admin():
     return redirect(url_for("home"))
 
+@app.route("/grievancelist.html",methods=["GET", "POST"])
+def grievancelist():
+    new,pending,closed = getDatalist.getlist(request, db)
+    return render_template("grievancelist.html",new=new,pending=pending,closed=closed)
+
+
+
 @app.route("/action.html",methods=["GET", "POST"])
 def taking():
     to=display(db)
@@ -57,6 +64,10 @@ firebase_admin.initialize_app(cred, {
 def process_formrty():
     process_form(request,db)
     return redirect(url_for("home"))
+
+@app.route("/admindetail.html",methods=["GET", "POST"])
+def admindetail():
+    return render_template("admindetail.html")
 
 if __name__ == '__main__':
     app.run()
