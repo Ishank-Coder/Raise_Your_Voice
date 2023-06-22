@@ -1,44 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Student Form Details with Feedback</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+
+    <!--- My CSS Link-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/action.css') }}">
 </head>
 <body>
-    <h1>Student Form Details</h1>
+
+    <main>
+        <section class="learn">
+            <h1>Grievance Raised.</h1>
+            <div class="cta">
+                <!-- {% for key, value in to.items() %}
+                <p><strong>{{ key }}</strong> {{ value }}</p>
+                {% endfor %}  -->
+                {% for key, value in to.items() %}
+                {% set index = loop.index0 %}
+                <p style="color: rgb(0, 0, 0);"><strong>{{ key }}</strong> {{ value }}</p>
+                {% endfor %}
+            </div>
+           
+            
+        </section>
+
+        <section>
+           
+
+            
+    <div class="sign-up">
+        <form action="post" class="signup-form" data-netlify="true">
+            <div class="form-btn">
+                <h2>Action to be taken</h2>
+                <textarea type="textarea" placeholder="Action to be taken" rows="4" cols="80" required></textarea>
+                <img class="icon" src="./Images/icon-error.svg" alt="Error">
+                <p class="msg">First Name cannot be empty</p>
+            </div>
+            <input id="file" type="button" value="Upload File" id="btn">
+            <div class="form-btn">
+                <img class="icon" src="./Images/icon-error.svg" alt="Error">
+                <select name="Type">  
+                    <option value="Further Review Needed ?">Further Review Needed ?</option>  
+                    <option value="BCA">Yes! In process.</option>  
+                    <option value="BBA">No! Close the ticket.</option>  
+                    
+        
+                    
+                    </select>  
+                <p class="msg">First Name cannot be empty</p>
+            </div>
+            
+
+            <input id="submit-btn" type="button" value="Subit Action" id="btn">
+    </form>
+        </section>
+    </main>
     
-    <h2>Personal Information</h2>
-    {% for key, value in to.items() %}
-    <p><strong>{{ key }}</strong> {{ value }}</p>
-    <!-- <p><strong>Email:</strong> {{ l }}</p>
-    <p><strong>Semester:</strong> {{ l }}</p>
-    <p><strong>Roll Number:</strong> {{ l }}</p>
-    <p><strong>Branch:</strong> {{ l }}</p> -->
-
-    {% endfor %}
-    <h2>Feedback</h2>
-
-    <form action="/submit-feedback" method="post" enctype='multipart/form-data'>
-        <label for="atbt">Action To Be Taken:</label><br>
-        <textarea id="atbt" name="atbt" rows="4" cols="50"></textarea><br>
-        <label for="atbt">Proof of Action</label><br>
-
-        <label for="atbt">Further review needed</label><br>
-        <label for="fr">YES</label>
-
-        <input type="radio" name="fr" value="0">
-
-        <label for="fr">NO</label>
-
-        <input type="radio" name="fr" value="1"><br>
-
-        <input type="submit" value="Submit Feedback">
-
-    </form>
-    <form method='POST' enctype='multipart/form-data'>
-        {{form.hidden_tag()}}
-        {{form.file()}}
-        {{form.submit()}}
-    </form>
-
 </body>
 </html>
