@@ -5,8 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='css/grlist.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static',filename='css/home.css') }}"> -->
 </head>
 <body>
+  <nav class="navbar">
+    <div class="logo"><img src="{{url_for('static', filename= 'images/Group25.png')}}" alt="logo"></div>
+    <!-- <ul class="nav-list">
+        <li> <a href="#home">Home</a></li>
+        <li> <a href="#about">About</a></li>
+        <li> <a href="#services">Services</a></li>
+        <li> <a href="#contact">Contact Us</a></li>
+        <button class="login-btn" onclick="showPopup()">Login</button>
+    </ul> -->
+    
+    <!-- <div class="rightnav"> -->
+        <!-- <button class="login-btn">Login</button> -->
+    <!-- </div> -->
+    <div class="hamcon">
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</nav>
     <section class="new">
         <div class="main">
             <div class="heading">
