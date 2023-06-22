@@ -41,10 +41,9 @@ def admin():
 @app.route("/grievancelist.html",methods=["GET", "POST"])
 def grievancelist():
     new,pending,closed = getDatalist.getlist(request, db)
-    
-    
-    
     return render_template("grievancelist.html",new=new,pending=pending,closed=closed)
+
+
 
 @app.route("/action.html",methods=["GET", "POST"])
 def taking():
