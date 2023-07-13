@@ -69,6 +69,10 @@ def process_formrty():
 def admindetail():
     return render_template("admindetail.html")
 
+@app.route("/adminpanel.html",methods=["GET", "POST"])
+def adminpanel():
+    return render_template("adminpanel.html")
+
 if __name__ == '__main__':
     app.run()
 

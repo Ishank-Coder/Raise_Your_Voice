@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>side navigation bar</title>
+	<script src="https://kit.fontawesome.com/bba3432f3f.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/adminpanel.css') }}">
+</head>
+
+<body>
+	<div action="post" class="header">
+		<div class="side-nav">
+			<a href="#" class="logo">
+				<img src="{{url_for('static', filename= 'images/Group25.png')}}" class="logo-img">
+			</a>
+            <div class="profile">
+                <h3>Filter</h3>
+            </div>
+			<ul class="nav-links">
+				<li><a href="#">
+						<i class="fa-solid fa-house-user"></i>
+						<p class="ptag">Dashboard</p>
+                        <input type="checkbox">
+					</a>
+				</li>
+				<li><a href="#">
+						<i class="fa-solid fa-comment-dots"></i>
+						<p class="ptag">Message</p>
+                        <input type="checkbox">
+					</a>
+				</li>
+				<li><a href="#">
+						<i class="fa-solid fa-user"></i>
+						<p class="ptag">users</p>
+                        <input type="checkbox">
+					</a>
+				</li>
+				<li><a href="#">
+						<i class="fa-solid fa-box-open"></i>
+						<p class="ptag">Rewards</p>
+                        <input type="checkbox">
+					</a>
+				</li>
+				<li><a href="#">
+						<i class="fa-solid fa-chart-pie"></i>
+						<p class="ptag">Report</p>
+                        <input type="checkbox">
+					</a>
+				</li>
+				<li><a href="#">
+						<i class="fa-solid fa-screwdriver-wrench"></i>
+						<p class="ptag">Setting</p>
+                        <input type="checkbox">
+					</a>
+				</li>
+				<div class="active"></div>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
