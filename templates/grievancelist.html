@@ -5,35 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{{ url_for('static',filename='css/grlist.css') }}">
-    <!-- <link rel="stylesheet" href="{{ url_for('static',filename='css/home.css') }}"> -->
+    <!-- <link rel="stylesheet" href="css/grlist.css"> -->
 </head>
 <body>
   <nav class="navbar">
     <div class="logo"><img src="{{url_for('static', filename= 'images/Group25.png')}}" alt="logo"></div>
-    <!-- <ul class="nav-list">
-        <li> <a href="#home">Home</a></li>
-        <li> <a href="#about">About</a></li>
-        <li> <a href="#services">Services</a></li>
-        <li> <a href="#contact">Contact Us</a></li>
-        <button class="login-btn" onclick="showPopup()">Login</button>
-    </ul> -->
+    <ul class="nav-list">
+        <li> <a href="#NewTickets">New Tickets</a></li>
+        <li> <a href="#OngoingTickets">Ongoing Tickets</a></li>
+        <li> <a href="#ClosedTickets">Closed Tickets</a></li>
+    </ul> 
     
-    <!-- <div class="rightnav"> -->
-        <!-- <button class="login-btn">Login</button> -->
-    <!-- </div> -->
-    <div class="hamcon">
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-    </div>
 </nav>
     <section class="new">
-        <div class="main">
-            <div class="heading">
-                <h1 class="heading">New Tickets</h1>
-            </div>
+        <div id="NewTickets">
               <div class="tbl-content">
                 <table cellpadding="0" cellspacing="0" border="0">
                   <tbody>
@@ -48,10 +33,9 @@
               </div>
         </div>
 
-
     </section>
-    <section class="new">
-        <div class="main">
+    <!-- <section class="new">
+        <div id="OngoingTickets">
             <div class="heading">
                 <h1 class="heading">Ongoing Tickets</h1>
             </div>
@@ -71,9 +55,9 @@
         </div>
 
 
-    </section>
-    <section class="new">
-        <div class="main">
+    </section> -->
+    <!-- <section class="new">
+        <div id="ClosedTickets">
             <div class="heading">
                 <h1 class="heading">Closed Tickets</h1>
             </div>
@@ -91,9 +75,7 @@
                 </table>
               </div>
         </div>
-
-
-    </section>
+</section> -->
 <script type="text/javascript" src="{{ url_for('static',filename='js/grlist.js') }}"></script>
 </body>
 
