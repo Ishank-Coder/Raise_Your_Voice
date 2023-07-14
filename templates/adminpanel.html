@@ -11,7 +11,7 @@
 <body>
 	<div action="post" class="header">
 		<div class="side-nav">
-			<a href="#" class="logo">
+			<a href="#" id="logo" class="logo">
 				<img src="{{url_for('static', filename= 'images/Group25.png')}}" class="logo-img">
 			</a>
             <div class="profile">
@@ -21,30 +21,40 @@
 				<li><a href="#">
 						<i class="fa-solid fa-house-user"></i>
 						<p class="ptag">Dashboard</p>
-                        <input type="checkbox">
+                        <input class="check" type="checkbox">
 					</a>
 				</li>
 				<li><a href="#">
 						<i class="fa-solid fa-comment-dots"></i>
 						<p class="ptag">Message</p>
-                        <input type="checkbox">
+                        <input class="check" type="checkbox">
 					</a>
 				</li>
 				<li><a href="#">
 						<i class="fa-solid fa-user"></i>
 						<p class="ptag">users</p>
-                        <input type="checkbox">
+                        <input class="check" type="checkbox">
 					</a>
 				</li>
 				<li><a href="#">
 						<i class="fa-solid fa-screwdriver-wrench"></i>
 						<p class="ptag">Setting</p>
-                        <input type="checkbox">
+                        <input class="check" type="checkbox">
 					</a>
 				</li>
 				<div class="active"></div>
 			</ul>
 		</div>
 	</div>
+
+    <script>
+        let btn = document.querySelector('#logo');
+        let sidebar = document.querySelector('.side-nav');
+
+        btn.onclick = function() {
+            sidebar.classList.toggle("active");
+        }
+    </script>
+
 </body>
 </html>
