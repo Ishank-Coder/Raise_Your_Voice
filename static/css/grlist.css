@@ -1,4 +1,10 @@
 
+
+body{
+  display: block;
+  margin: 0px;
+  background-color: #dbd9d9;
+}
 .logo{
   width: 20%;
   display: flex;
@@ -6,7 +12,7 @@
   align-items: center;
 }
 .logo img{
-  width: 50px;
+  width: 65px;
 }
 .navbar{
   display: flex;
@@ -15,6 +21,7 @@
   padding: 0 24px;
   backdrop-filter: blur(5px);
   box-shadow: #000000 5px;
+  background-color: #0f3950;
   
 }
 
@@ -23,7 +30,7 @@
   margin-top: 10px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: right;
 }
 .nav-list li{
   list-style: none;
@@ -33,11 +40,13 @@
 
 .nav-list li a{
   text-decoration: none;
-  color: black;
+  color: white;
+  font-size: 23px;
+  font-family: sans-serif;
 }
 
 .nav-list li a:hover{
-  color: grey;
+  color: #6be9d1;
 }
 
 .rightnav{
@@ -47,14 +56,12 @@
   text-align: right;
 }
 
-h1{
-    font-size: 30px;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 300;
-    text-align: left;
-    margin-bottom: 15px;
+.new{
+  margin-bottom: 90px;
+  margin-top: 150px;
   }
+
+
   table{
     width:100%;
     table-layout: fixed;
@@ -64,12 +71,16 @@ h1{
     background-color: rgba(255,255,255,0.3);
    }
   .tbl-content{
-    height:220px;
+    height:460px; 
+    width: 80%; 
     overflow-x:auto;
-    margin-top: 0px;
+    border-radius: 20px;
+    margin-top: 200px;
+    justify-content: center;
+    text-align: center;
+    margin-left: 200px;
     background-color: white;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    
+    box-shadow: 5px 5px 50px 5px;
   }
   th{
     padding: 20px 15px;
@@ -84,27 +95,29 @@ h1{
     text-align: left;
     vertical-align:middle;
     font-weight: 300;
-    font-size: 12px;
-    /* color: #fff; */
-    border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+    font-size: 35px;
+    color:black;
+    border-bottom: solid 5px  #dbd9d9;
+    background-color: white;
+    font-family: sans-serif;
   }
   
   
   /* demo styles */
   
-  @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+  /* @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
   body{
     background: -webkit-linear-gradient(left, #25c481, #25b7c4);
     background: linear-gradient(to right, #25c481, #25b7c4);
     font-family: 'Roboto', sans-serif;
-  }
+  } */
   section{
     margin: 50px;
-  }
+  } 
   
   
   /* follow me template */
-  .made-with-love {
+  /* .made-with-love {
     margin-top: 40px;
     padding: 10px;
     clear: left;
@@ -127,11 +140,11 @@ h1{
   .made-with-love a:hover {
     text-decoration: underline;
   }
-  
+   */
   
   /* for custom scrollbar for webkit browser*/
   
-  ::-webkit-scrollbar {
+  /* ::-webkit-scrollbar {
       width: 6px;
   } 
   ::-webkit-scrollbar-track {
@@ -139,4 +152,4 @@ h1{
   } 
   ::-webkit-scrollbar-thumb {
       -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-  }
+  } */
