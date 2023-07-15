@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
     <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 <!-- Bootstrap JS -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
@@ -18,23 +19,23 @@
         <nav class="navbar">
             <div class="logo"><img src="{{url_for('static', filename= 'images/Group25.png')}}" alt="logo"></div>
             <ul class="nav-list">
-                <li> <a href="#home">Home</a></li>
+                <!-- <li> <a href="#home">Home</a></li>
                 <li> <a href="#about">About</a></li>
                 <li> <a href="#services">Services</a></li>
-                <li> <a href="#contact">Contact Us</a></li>
+                <li> <a href="#contact">Contact Us</a></li> -->
                 <button class="login-btn" onclick="showPopup()">Login</button>
             </ul>
            
             <!-- <div class="rightnav"> -->
                 <!-- <button class="login-btn">Login</button> -->
             <!-- </div> -->
-            <div class="hamcon">
+            <!-- <div class="hamcon">
                 <div class="hamburger">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </div>
-            </div>
+            </div> -->
         </nav>
 
         <section class="background firstsection">
@@ -118,7 +119,58 @@
             </div>
         </div>
     </div> -->
+<footer class="footer-distributed">
+
+			<div class="footer-left">
+
+				<h3>Grievance<span>Redressal</span></h3>
+
+				<p class="footer-links">
+					<!-- <a href="#">Home</a>
+					·
+					<a href="#">Blog</a>
+					·
+					<a href="#">Pricing</a>
+					·
+					<a href="#">About</a>
+					·
+					<a href="#">Faq</a>
+					·
+					<a href="#">Contact</a> -->
+				</p>
+
+				<p class="footer-company-name">Arya FuTech © 2024</p>
+
+				<div class="footer-icons">
+
+					<a href="#"><i class="fa fa-facebook"></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="#"><i class="fa fa-linkedin"></i></a>
+					<a href="#"><i class="fa fa-github"></i></a>
+
+				</div>
+
+			</div>
+
+			<div class="footer-right">
+
+				<!-- <p>Contact Developers</p> -->
+
+				<form action="#" method="post">
+
+					<input type="text" name="phoneno" placeholder="Phone Number">
+					<textarea name="message" placeholder="Write a message to contact Developers"></textarea>
+					<button>Send</button>
+
+				</form>
+
+			</div>
+
+		</footer>
+
 </body>
+
+
 <script type="text/javascript" src="{{url_for('static',filename='js/home.js')}}"></script>
 <script>
     function showPopup() {
@@ -132,7 +184,5 @@
       }
       
 </script>
-
-
 
 </html>
