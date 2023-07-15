@@ -12,21 +12,48 @@ A* {
 }
 
 .side-nav {
-	width: 250px;
+	width: 80px;
 	height: 100%;
 	background: #6de9d1;
 	position: fixed;
 	top: 0;
 	left: 0;
 	padding: 20px 30px;
+	transition: all 0.5s ease;
+}
+
+.side-nav.active {
+	width: 250px;
 }
 
 .ptag {
+    vertical-align: auto;
+	opacity: 0;
+}
+
+.check.active {
+	align-items: center;
+}
+
+.check {
+	align-items: center;
+	opacity: 0;
+}
+
+.ptag.active {
     margin-right: 20px;
     vertical-align: auto;
 }
 
 .logo {
+	margin-bottom: 30px;
+	margin-left: 10%;
+	width: 3%;
+    display: block;
+    justify-content: flex-start;
+}
+
+.logo.active {
 	margin-bottom: 30px;
 	margin-left: 33%;
 	width: 20%;
@@ -35,6 +62,12 @@ A* {
 }
 
 .profile {
+	display: block;
+	margin-bottom: 30px;
+	margin-left: 30%;
+}
+
+.profile.active {
 	display: block;
 	margin-bottom: 30px;
 	margin-left: 40%;
@@ -58,12 +91,24 @@ A* {
 .nav-links li a {
 	color: #000000;
 	text-decoration: none;
+	padding: 10px 0px;
+	display: flex;
+	align-items: center;
+}
+.nav-links li a.active {
+	color: #000000;
+	text-decoration: none;
 	padding: 10px 14px;
 	display: flex;
 	align-items: center;
 }
 
 .nav-links li a i {
+	font-size: 22px;
+	margin-left: -10px;
+}
+
+.nav-links li a i.active {
 	font-size: 22px;
 	margin-right: 20px;
 }
