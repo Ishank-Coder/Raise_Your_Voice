@@ -38,8 +38,6 @@
               <p class="msg">First Name cannot be empty</p>
           </div>
           
-          
-          
 
             <div class="form-btn">
                 <input type="text" placeholder="College E-mail ID " name="Mail" required>
@@ -60,16 +58,28 @@
             </div>
 
             <div class="form-btn">
-                <input type="text" placeholder="AKTU Roll Number" name="RollNo" required>
+                <input type="text" placeholder="AKTU Roll Number (for students)" name="RollNo" >
                 <img class="icon" src="./Images/icon-error.svg" alt="Error">
                 <p class="msg">First Name cannot be empty</p>
             </div>
 
             <div class="form-btn">
-                <input type="text" placeholder="Branch" name="Branch" required>
+                <input type="text" placeholder="Branch (for students)" name="Branch" >
                 <img class="icon" src="./Images/icon-error.svg" alt="Error">
                 <p class="msg">First Name cannot be empty</p>
             </div>
+
+
+            <div class="form-btn">
+                <input type="text" placeholder="Department (for faculty)" name="Department" >
+                <img class="icon" src="./Images/icon-error.svg" alt="Error">
+            </div>
+
+            <div class="form-btn">
+                <input type="text" placeholder="Designation (for faculty)" name="Designation" >
+                <img class="icon" src="./Images/icon-error.svg" alt="Error">
+            </div>
+
 
             <div class="form-btn">
                 <input type="text" placeholder="Date & Time of Incident" name="Date and Time" required>
@@ -96,9 +106,11 @@
               <p class="msg">First Name cannot be empty</p>
           </div>
 
-           
 
-            <input id="submit-btn" type="submit" value="submit" id="btn">
+
+            <input id="upload-btn" type="button" value="Upload File" > 
+
+            <input id="submit-btn" type="submit" value="submit" >
 
             <!-- <p class="terms">By clicking the button, you are agreeing to our <span><a href="#">Terms and Services</a></span></p> -->
         </form>

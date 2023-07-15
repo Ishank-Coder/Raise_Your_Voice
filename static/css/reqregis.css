@@ -9,6 +9,7 @@
 body {
     font-size: 16px;
 }
+
 section {
     max-width: 100%;
     width: 50%;
@@ -19,8 +20,7 @@ main {
     align-items: center;
     min-height: 100vh; /* made the content be at the middle */
     background: url(./static/images/bg-intro-desktop.png) no-repeat;
-    background-color: #6BE9D1
-    ;
+    background-color:  #dbd9d9 ;
     background-size: cover;
     padding: 0 160px;
 }
@@ -33,6 +33,7 @@ h1 {
     line-height: 56px;
     margin-bottom: 25px;
     font-weight: 700;
+    color: #0f3950;
 }
 .learn p {
     color: rgba(255, 255, 255, .755);
@@ -60,7 +61,7 @@ h1 {
     overflow-x:auto;
     height:600px;
     
-    box-shadow: 0 .5em 0 rgb(0, 0, 0, .124);
+    box-shadow: 5px 5px 50px 5px;
 }
 form {
     display: flex;
@@ -88,19 +89,33 @@ textarea:focus, input:focus {
     color: hsl(249, 10%, 26%);
 }
 
+#upload-btn {
+  background-color: #0f3950;
+  color: #ffffff;
+  border: none;
+  padding: 1em 0;
+  font-size: 1em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+#upload-btn:hover {
+  cursor: pointer;
+  background-color:#6BE9D1;
+}
+
 #submit-btn {
-    background-color: hsl(154, 59%, 51%);
+    background-color: #0f3950;
     color: #ffffff;
+    
     border: none;
     padding: 1em 0;
     font-size: 1em;
     font-weight: 500;
     text-transform: uppercase;
-    box-shadow: 0 0.2em 0 rgb(46, 167, 114);
 }
 #submit-btn:hover {
     cursor: pointer;
-    background-color: rgb(58, 192, 134, .755);
+    background-color:#6BE9D1;
 }
 .terms {
     color: hsl(246, 25%, 77%);
