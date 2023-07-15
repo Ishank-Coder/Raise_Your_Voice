@@ -3,8 +3,9 @@ from flask import Flask, session, request, render_template,redirect
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
-from dataEntry import process_form
+from dataEntry import process_form,popup
 from dataDisplay import display
+import dataEntry
 from flask_wtf import FlaskForm
 from wtforms import FileField, SubmitField
 from werkzeug.utils import secure_filename
@@ -37,10 +38,10 @@ def registerReq():
 def admin():
     return redirect(url_for("home"))
 
-@app.route("/grievancelist.html",methods=["GET", "POST"])
-def grievancelist():
-    new,pending,closed = getDatalist.getlist(request, db)
-    return render_template("grievancelist.html",new=new,pending=pending,closed=closed)
+# @app.route("/grievancelist.html",methods=["GET", "POST"])
+# def grievancelist():
+#     new,pending,closed = dataDisplay.displaypopup(request, db)
+#     return render_template("grievancelist.html",new=new,pending=pending,closed=closed)
 
 
 
@@ -64,6 +65,24 @@ firebase_admin.initialize_app(cred, {
 def process_formrty():
     process_form(request,db)
     return redirect(url_for("home"))
+
+
+@app.route('/actiontaken', methods=['POST'])
+def att():
+    dataEntry.at(request,db)
+    return redirect(url_for('popsup'))
+
+
+@app.route('/popup', methods=["GET",'POST'])
+def popsup():
+    newji=popup(request,db)
+    return render_template("grievancelist.html",new=newji)
+
+# @app.route('/detail', methods=["GET",'POST'])
+# def details():
+    
+#     return render_template("action.html")
+
 
 @app.route("/admindetail.html",methods=["GET", "POST"])
 def admindetail():
