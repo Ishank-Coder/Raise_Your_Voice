@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    
 }
 
 html::-webkit-scrollbar {
@@ -82,13 +83,16 @@ html::-webkit-scrollbar-thumb:active {
     /* margin-left: 200px; */
     /* margin-top: 80px; */
     align-items: center;
+    
 }
 .background{
     background-size: cover;
     mix-blend-mode: darken;
+    
 }
 .firstsection{
     height: 60vh;
+   
 }
 .firsthalf{
     width: 70%;
