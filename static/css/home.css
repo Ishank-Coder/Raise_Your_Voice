@@ -26,7 +26,9 @@ html::-webkit-scrollbar-thumb:active {
     background: #6BE9D1;
     border-radius: 10px;
   }
-
+@media screen {
+    
+}
 .logo{
     width: 50%;
     display: flex;
@@ -41,6 +43,7 @@ html::-webkit-scrollbar-thumb:active {
     min-height:70px;
     justify-content: space-between;
     padding: 0 24px;
+    background: #dbd9d9;
     
 }
 
@@ -86,9 +89,12 @@ html::-webkit-scrollbar-thumb:active {
 .background{
     background-size: cover;
     mix-blend-mode: darken;
+
 }
+
 .firstsection{
     height: 60vh;
+    background: #dbd9d9
 }
 .firsthalf{
     width: 70%;
@@ -139,6 +145,14 @@ html::-webkit-scrollbar-thumb:active {
     font-size: 30px;
     display: flex;
     margin-top: 30px;
+    background: #dbd9d9
+}
+.jj{
+    background: #dbd9d9;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
 }
 .login-btn{
     background-color: #6BE9D1;
@@ -823,8 +837,9 @@ html::-webkit-scrollbar-thumb:active {
     align-items: center;
     font-size: 30px;
     display: flex;
-    margin-top: -52px;
-    margin-bottom: 75px;
+    /* margin-top: -52px; */
+    /* margin-bottom: 75px; */
+    height: 0vh;
 }
 .login-btn{
     background-color: #6BE9D1;
@@ -851,6 +866,7 @@ html::-webkit-scrollbar-thumb:active {
     position: relative;
     border-radius: 4px;
     font-size: 30px;
+    bottom: 30px;
 }
 .Dropdown{
     height: auto;
@@ -1394,4 +1410,5 @@ html::-webkit-scrollbar-thumb:active {
           float: none;
       }
   }
+  
   
