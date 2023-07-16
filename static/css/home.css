@@ -1,12 +1,8 @@
 *{
     margin: 0;
     padding: 0;
-    
 }
 
-html::-webkit-scrollbar {
-    width: 10px;
-  }
 
 html::-webkit-scrollbar-track {
     background: #0f3950;
@@ -42,6 +38,7 @@ html::-webkit-scrollbar-thumb:active {
     min-height:70px;
     justify-content: space-between;
     padding: 0 24px;
+    background: #dbd9d9;
     
 }
 
@@ -88,11 +85,10 @@ html::-webkit-scrollbar-thumb:active {
 .background{
     background-size: cover;
     mix-blend-mode: darken;
-    
 }
+
 .firstsection{
     height: 60vh;
-   
 }
 .firsthalf{
     width: 70%;
@@ -143,9 +139,17 @@ html::-webkit-scrollbar-thumb:active {
     font-size: 30px;
     display: flex;
     margin-top: 30px;
+    background: #dbd9d9
+}
+.jj{
+    background: #dbd9d9;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
 }
 .login-btn{
-    background-color: #6BE9D1;
+    /* background-color: #6BE9D1;
     padding: 8px 20px;
     align-items: top;
     margin: 7px 0;
@@ -153,8 +157,54 @@ html::-webkit-scrollbar-thumb:active {
     border: none;
     border-radius: 2px;
     color: white;
-    font-size: 20px;
+    font-size: 20px; */
+    font-size: 17px;
+  background: transparent;
+  border: none;
+  padding: 1em 1.5em;
+  color: #0f3950;
+  text-transform: uppercase;
+  position: relative;
+  transition: .5s ease;
 }
+.login-btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #0f3950;
+    transition: .5s ease;
+  }
+  
+  .login-btn:hover {
+    color: #1e1e2b;
+    transition-delay: .5s;
+  }
+  
+  .login-btn:hover::before {
+    width: 100%;
+  }
+  
+  .login-btn::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background-color: #0f3950;
+    transition: .4s ease;
+    z-index: -1;
+  }
+  
+  .login-btn:hover::after {
+    height: 100%;
+    transition-delay: 0.4s;
+    color: aliceblue;
+  }
+
 
 .fyg-btn{
     background-color: #6BE9D1;
@@ -539,7 +589,7 @@ html::-webkit-scrollbar-thumb:active {
       margin: 0 0 10px;
   }
   
-  .footer-distributed h3 span{
+  .footer-distributed h3 .footspan{
       color:  #6BE9D1;
   }
   
@@ -650,7 +700,7 @@ html::-webkit-scrollbar-thumb:active {
       margin-bottom: 20px;
   }
   
-  .footer-distributed form button{
+  .footer-distributed form .footbut{
       border-radius: 3px;
       background-color:  #33383b;
       color: #ffffff;
@@ -677,7 +727,7 @@ html::-webkit-scrollbar-thumb:active {
           width: 250px;
       }
   
-      .footer-distributed form button{
+      .footer-distributed form .footbut{
           padding: 10px 35px;
       }
   
@@ -708,7 +758,7 @@ html::-webkit-scrollbar-thumb:active {
           display: block;
       }
   
-      .footer-distributed form button{
+      .footer-distributed form .footbut{
           float: none;
       }
   }
@@ -827,10 +877,11 @@ html::-webkit-scrollbar-thumb:active {
     align-items: center;
     font-size: 30px;
     display: flex;
-    margin-top: -52px;
-    margin-bottom: 75px;
+    /* margin-top: -52px; */
+    /* margin-bottom: 75px; */
+    height: 0vh;
 }
-.login-btn{
+/* .login-btn{
     background-color: #6BE9D1;
     padding: 8px 20px;
     align-items: top;
@@ -840,9 +891,9 @@ html::-webkit-scrollbar-thumb:active {
     border-radius: 2px;
     color: white;
     font-size: 20px;
-}
+} */
 
-.fyg-btn{
+/* .fyg-btn{
     background-color: #6BE9D1;
     padding: 12px 30px;
     border: none;
@@ -855,7 +906,8 @@ html::-webkit-scrollbar-thumb:active {
     position: relative;
     border-radius: 4px;
     font-size: 30px;
-}
+    bottom: 30px;
+} */
 .Dropdown{
     height: auto;
     width: 200px;
@@ -878,10 +930,143 @@ html::-webkit-scrollbar-thumb:active {
     color: white;
 
 }
-.fyg-btn:hover .Dropdown
+/* .fyg-btn:hover .Dropdown
 {
     display: block;
+} */
+
+.fyg-btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: #6BE9D1;
+    font-family: "Montserrat", sans-serif;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    border: none;
+    margin: 7px 0;
+    height: 20%;
+    bottom:30px;
+   }
+   
+   .fyg-btn:after {
+    content: " ";
+    width: 0%;
+    height: 100%;
+    background: #0f3950;
+    position: absolute;
+    transition: all 0.4s ease-in-out;
+    right: 0;
+   }
+   
+   .fyg-btn:hover::after {
+    right: auto;
+    left: 0;
+    width: 100%;
+   }
+   
+   .fyg-btn .filespan {
+    text-align: center;
+    text-decoration: none;
+    width: 400px;
+    padding: 11px 10px;
+    color: #0f3950;
+    font-size: 1.025em;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    z-index: 20;
+    transition: all 0.3s ease-in-out;
+   }
+   
+   .fyg-btn:hover .filespan {
+    color: #6BE9D1;
+    animation: scaleUp 0.3s ease-in-out;
+   }
+   
+   @keyframes scaleUp {
+    0% {
+     transform: scale(1);
+    }
+   
+    50% {
+     transform: scale(0.95);
+    }
+   
+    100% {
+     transform: scale(1);
+    }
+   }
+   
+@media(max-width:768px) {
+
+    .fyg-btn {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        background: #6BE9D1;
+        font-family: "Montserrat", sans-serif;
+        box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        border: none;
+        margin: 7px 0;
+        height: 20%;
+        bottom:30px;
+       }
+       
+       .fyg-btn:after {
+        content: " ";
+        width: 0%;
+        height: 100%;
+        background: #0f3950;
+        position: absolute;
+        transition: all 0.4s ease-in-out;
+        right: 0;
+       }
+       
+       .fyg-btn:hover::after {
+        right: auto;
+        left: 0;
+        width: 100%;
+       }
+       
+       .fyg-btn .filespan {
+        text-align: center;
+        text-decoration: none;
+        width: 265px;
+        padding: 11px 10px;
+        color: #0f3950;
+        font-size: 0.725em;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        z-index: 20;
+        transition: all 0.3s ease-in-out;
+       }
+       
+       .fyg-btn:hover .filespan {
+        color: #6BE9D1;
+        animation: scaleUp 0.3s ease-in-out;
+       }
+       
+       @keyframes scaleUp {
+        0% {
+         transform: scale(1);
+        }
+       
+        50% {
+         transform: scale(0.95);
+        }
+       
+        100% {
+         transform: scale(1);
+        }
+       }
+    
 }
+
 
 
         /* .container{
@@ -1222,10 +1407,10 @@ html::-webkit-scrollbar-thumb:active {
   .footer-distributed h3{
       color:  #ffffff;
       font: normal 36px 'Roboto', cursive;
-      margin: 0 0 10px;
+      margin: 15px 0 10px;
   }
   
-  .footer-distributed h3 span{
+  .footer-distributed h3 .footspan{
       color:  #6BE9D1;
   }
   
@@ -1336,7 +1521,7 @@ html::-webkit-scrollbar-thumb:active {
       margin-bottom: 20px;
   }
   
-  .footer-distributed form button{
+  .footer-distributed form .footbut{
       border-radius: 3px;
       background-color: #6BE9D1;
       color: #ffffff;
@@ -1363,7 +1548,7 @@ html::-webkit-scrollbar-thumb:active {
           width: 250px;
       }
   
-      .footer-distributed form button{
+      .footer-distributed form .footbut{
           padding: 10px 35px;
       }
   
@@ -1394,8 +1579,9 @@ html::-webkit-scrollbar-thumb:active {
           display: block;
       }
   
-      .footer-distributed form button{
+      .footer-distributed form .footbut{
           float: none;
       }
   }
+  
   
