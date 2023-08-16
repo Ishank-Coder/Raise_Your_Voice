@@ -23,99 +23,113 @@
             </div> -->
 
             
-    <div class="sign-up">
-        <form action="/process_form" method="POST" class="signup-form" >
-           
-            <div class="form-btn">
-                <input type="text" placeholder="Name" name="Name" required>
-                <img class="icon" src="./Images/icon-error.svg" alt="Error">
-                <p class="msg">First Name cannot be empty</p>
-            </div>
+            <div class="container">
+                <form>
+            
+                  <div class="step step-1 active">
+                    <div class="form-group">
+                      <label for="firstName">Organisation Name</label>
+                      <input type="text" id="firstName" name="first-name" list="type1">
+                      <datalist id="type1">
+                        <option value="MIET Meerut">
+                        <option value="MIT Meerut">
+                      </datalist>
+                    </div>
+                    <div class="form-group">
+                      <label for="lastName">Type Of Grievance</label>
+                      <input type="text" id="lastName" name="last-name" list="type2">
+                      <datalist id="type2">
+                        <option value="Exam related">
+                        <option value="Women related">
+                            <option value="icubation chor">
+                                <option value="hostel">
+                                    <option value="other">
+                            
+                      </datalist>
+                    </div>
+                    <div class="form-group">
+                      <label for="nickName">Who are You ?</label>
+                      <input type="text" id="nickName" name="nick-name" list="type3">
+                      <datalist id="type3">
+                        <option value="student">
+                        <option value="faculty">
+                      </datalist>
+                    </div>
+                    <button type="button" class="next-btn">Next</button>
+                  </div>
+            
+                  <div class="step step-2">
+                    <div class="form-group">
+                      <label for="email">Name</label>
+                      <input type="text" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Designation</label>
+                        <input type="text" id="email" name="email">
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Department</label>
+                        <input type="text" id="email" name="email">
+                      </div>
+                      <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="text" id="email" name="email">
+                      </div>
+                    <div class="form-group">
+                      <label for="phone">Phone</label>
+                      <input type="number" id="phone" name="phone-number">
+                    </div>
+                    <button type="button" class="previous-btn">Prev</button>
+                    <button type="button" class="next-btn">Next</button>
+                  </div>
 
-            <div class="form-btn">
-              <input type="text" placeholder="Gender" name="Gender" required>
-              <img class="icon" src="./Images/icon-error.svg" alt="Error">
-              <p class="msg">First Name cannot be empty</p>
-          </div>
-          
-
-            <div class="form-btn">
-                <input type="text" placeholder="College E-mail ID " name="Mail" required>
-                <img class="icon" src="./Images/icon-error.svg" alt="Error">
-                <p class="msg">First Name cannot be empty</p>
-            </div>
-
-            <div class="form-btn">
-                <input type="text" placeholder="Mobile Number" name="Number" required>
-                <img class="icon" src="./Images/icon-error.svg" alt="Error">
-                <p class="msg">First Name cannot be empty</p>
-            </div>
-
-            <div class="form-btn">
-                <input type="text" placeholder="Semester" name="Semester" required>
-                <img class="icon" src="./Images/icon-error.svg" alt="Error">
-                <p class="msg">First Name cannot be empty</p>
-            </div>
-
-            <div class="form-btn">
-                <input type="text" placeholder="AKTU Roll Number (for students)" name="RollNo" >
-                <img class="icon" src="./Images/icon-error.svg" alt="Error">
-                <p class="msg">First Name cannot be empty</p>
-            </div>
-
-            <div class="form-btn">
-                <input type="text" placeholder="Branch (for students)" name="Branch" >
-                <img class="icon" src="./Images/icon-error.svg" alt="Error">
-                <p class="msg">First Name cannot be empty</p>
-            </div>
-
-
-            <div class="form-btn">
-                <input type="text" placeholder="Department (for faculty)" name="Department" >
-                <img class="icon" src="./Images/icon-error.svg" alt="Error">
-            </div>
-
-            <div class="form-btn">
-                <input type="text" placeholder="Designation (for faculty)" name="Designation" >
-                <img class="icon" src="./Images/icon-error.svg" alt="Error">
-            </div>
-
-
-            <div class="form-btn">
-                <input type="text" placeholder="Date & Time of Incident" name="Date and Time" required>
-                <img class="icon" src="./Images/icon-error.svg" alt="Error">
-                <p class="msg">Last Name cannot be empty</p>
-            </div>
-
-            <div class="form-btn">
-                <input type="email" placeholder="Any Other Specific Details ?" name="Detail" required>
-                <img class="icon" src="./Images/icon-error.svg" alt="Error">
-                <p class="msg">Looks like this is not an email</p>
-            </div>
-
-            <div class="form-btn">
-              <img class="icon" src="./Images/icon-error.svg" alt="Error">
-              <select name="Type">  
-                  <option value="Select Your Grievance">Who Are You ?</option>  
-                  <option value="Student">Student</option>  
-                  <option value="Faculty">Faculty</option>  
-                  <option value="Assistant Worker">Assistant Workers</option>  
-      
-                  
-                  </select>  
-              <p class="msg">First Name cannot be empty</p>
-          </div>
-
-
-
-            <input id="upload-btn" type="button" value="Upload File" > 
-
-            <input id="submit-btn" type="submit" value="submit" >
-
-            <!-- <p class="terms">By clicking the button, you are agreeing to our <span><a href="#">Terms and Services</a></span></p> -->
-        </form>
+                  <div class="step step-2">
+                    <div class="form-group">
+                      <label for="email">Name</label>
+                      <input type="text" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Year</label>
+                        <input type="text" id="email" name="email">
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Branch</label>
+                        <input type="text" id="email" name="email">
+                      </div>
+                      <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="text" id="email" name="email">
+                      </div>
+                    <div class="form-group">
+                      <label for="phone">Phone</label>
+                      <input type="number" id="phone" name="phone-number">
+                    </div>
+                    <button type="button" class="previous-btn">Prev</button>
+                    <button type="button" class="next-btn">Next</button>
+                  </div>
+            
+                  <div class="step step-3">
+                    <div class="form-group">
+                      <label for="country">Detailed Grievance</label>
+                      <input type="text" id="country" name="country">
+                    </div>
+                    <div class="form-group">
+                      <label for="city">Something More</label>
+                      <input type="text" id="city" name="city">
+                    </div>
+                    <div class="form-group">
+                      <label for="postCode">Upload</label>
+                      <input type="text" id="postCode" name="post-code">
+                    </div>
+                    <button type="button" class="previous-btn">Prev</button>
+                    <button type="submit" class="submit-btn">Submit</button>
+                  </div>
+            
+                </form>
+              </div>
         </section>
     </main>
     
 </body>
+<script type='text/javascript' src="{{ url_for('static', filename='js/reqreg.js') }}"></script>
 </html>
