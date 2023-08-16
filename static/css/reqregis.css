@@ -7,7 +7,7 @@
     font-family: 'Poppins', sans-serif;
 }
 body {
-    font-size: 16px;
+    display: block;
 }
 * {
   padding: 0;
@@ -72,6 +72,27 @@ button.previous-btn {
 button.submit-btn {
   background-color: aquamarine;
 }
+
+.logo{
+  width: 20%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.logo img{
+  width: 65px;
+}
+.navbar{
+  display: flex;
+  min-height:70px;
+  justify-content: space-between;
+  padding: 0 24px;
+  backdrop-filter: blur(5px);
+  box-shadow: #000000 5px;
+  background-color: #0f3950;
+  
+}
+
 
 section {
     max-width: 100%;
@@ -214,7 +235,7 @@ textarea:focus, input:focus {
         justify-content: center;
         align-items: center;
         background: url(./static/images/bg-intro-mobile.png);
-        background-color: #6BE9D1;
+        background-color: #dbd9d9;
     }
     section {
         width: 100%;

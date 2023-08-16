@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/scrollbar.css') }}">
     <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -23,7 +24,7 @@
                 <li> <a href="#about">About</a></li>
                 <li> <a href="#services">Services</a></li>
                 <li> <a href="#contact">Contact Us</a></li> -->
-                <button class="login-btn" onclick="showPopup()">Login</button>
+                <button class="login-btn" onclick="showPopup()"><span class="loginspan">Login</span></button>
             </ul>
            
             <!-- <div class="rightnav"> -->
@@ -42,9 +43,11 @@
             <div class="box-main">
                 <div class="firsthalf">
                     <p class="text-big">
+                        <b>
                         Facing any nuisance? 
                         <br>
                         File a Grievance!
+                    </b>
                     </p>
                 </div>
                 <div class="secondhalf">
@@ -53,8 +56,9 @@
             </div>
         </section>
         <section class="fyg">
+            <div class="jj">
             <a href="requestRegister.html"><button type="button" class="fyg-btn">
-                    File your Grievance
+                    <span class="filespan">File your Grievance</span>
                     <!-- <ul class="Dropdown">
                         <li><a href="#" class="miet">MIET</a></li>
                         <li><a href="#" class="miet">ABES</a></li>
@@ -62,6 +66,7 @@
                     </ul> -->
             </button>
         </a>
+    </div>
         </section>
         <div class="popup-overlay">
             <!-- <div class="cbtn"> -->
@@ -125,7 +130,7 @@
 
 			<div class="footer-left">
 
-				<h3>Grievance<span>Redressal</span></h3>
+				<h3>Grievance<span class="footspan">Redressal</span></h3>
 
 				<p class="footer-links">
 					<!-- <a href="#">Home</a>
@@ -162,7 +167,7 @@
 
 					<input type="text" name="phoneno" placeholder="Phone Number">
 					<textarea name="message" placeholder="Write a message to contact Developers"></textarea>
-					<button>Send</button>
+					<button class="footbut">Send</button>
 
 				</form>
 

@@ -7,10 +7,15 @@
     
     <!-- <link rel="stylesheet" href="assets/css/reqregis.css"> -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/reqregis.css') }}">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/scrollbar.css') }}">
   </head>
 <body>
-
+    <nav class="navbar">
+        <div class="logo"><img src="{{url_for('static', filename= 'images/Group25.png')}}" alt="logo"></div>
+    </nav>
     <main>
+    
         <section class="learn">
            <h1>File your Grievance.<br>here with Ease !!</h1>
            <img src="{{url_for('static', filename= 'images/image 3.png')}}" style="width:350px;height:400px;">
