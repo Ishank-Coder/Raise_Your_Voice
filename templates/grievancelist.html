@@ -1,85 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/grlist.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='css/grlist.css') }}"
+    />
     <!-- <link rel="stylesheet" href="css/grlist.css"> -->
-</head>
-<body>
-  <nav class="navbar">
-    <div class="logo"><img src="{{url_for('static', filename= 'images/Group25.png')}}" alt="logo"></div>
-    <ul class="nav-list">
-        <li> <a href="#NewTickets">New Tickets</a></li>
-        <li> <a href="#OngoingTickets">Ongoing Tickets</a></li>
-        <li> <a href="#ClosedTickets">Closed Tickets</a></li>
-    </ul> 
-    
-</nav>
- 
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img
+          src="{{url_for('static', filename= 'images/Group25.png')}}"
+          alt="logo"
+        />
+      </div>
+      <ul class="nav-list">
+        <li><a href="#NewTickets">New Tickets</a></li>
+        <li><a href="#OngoingTickets">Ongoing Tickets</a></li>
+        <li><a href="#ClosedTickets">Closed Tickets</a></li>
+      </ul>
+    </nav>
+    {% if flag_new %}
     <section class="new">
       <!-- <form action="/detail" method="POST" class="form_main2"> -->
-        <div id="NewTickets">
-              <div class="tbl-content">
-                <table cellpadding="0" cellspacing="0" border="0">
-                  <tbody>
-                    {% for name in new %}
-                    <tr>
-                      <td><a href="/action.html"> {{ name }}</a></td>
-                    </tr>
-                    {% endfor %}
-                    
-                  </tbody>
-                </table>
-              </div>
+      <div id="NewTickets">
+        <div class="tbl-content">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+              {% for name in new %}
+              <tr>
+                <td><a href="/action.html"> {{ name }}</a></td>
+                <td><span class="an">●</span></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+          <p></p>
         </div>
+      </div>
       <!-- </form> -->
     </section>
-    <!-- <section class="new">
-        <div id="OngoingTickets">
-            <div class="heading">
-                <h1 class="heading">Ongoing Tickets</h1>
-            </div>
-            
-              <div class="tbl-content">
-                <table cellpadding="0" cellspacing="0" border="0">
-                  <tbody>
-                    {% for name in pending %}
-                    <tr>
-                      <td>{{ name }}</td>
-                    </tr>
-                    {% endfor %}
-                    
-                  </tbody>
-                </table>
-              </div>
+    {% else %} {% endif %} {% if flag_pend %}
+    <section class="new">
+      <div id="OngoingTickets">
+         <div class="tbl-content">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+              {% for name in pending %}
+              <tr>
+                <td>{{ name }}</td>
+                <td class="itemtab"><span class="ap">●</span></td>
+                <td class="itemtab"><a class =itemtable  href="#"><i class="fa fa-history" aria-hidden="true"></i></a></td>
+                <td class="itemtab"><a class =itemtable id="new_action" href="#"><i class="fa fa-plus"></i></a></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+          <p></p>
         </div>
+      </div>
+    </section>
+    {% else %} {% endif %} {% if flag_closed %}
+    <section class="new">
+      <div id="ClosedTickets">
+        
+        <div class="tbl-content">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+              {% for name in closed %}
+              <tr>
+                <td>{{ name }}</td>
+                <td><span class="ac">●</span></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
 
-
-    </section> -->
-    <!-- <section class="new">
-        <div id="ClosedTickets">
-            <div class="heading">
-                <h1 class="heading">Closed Tickets</h1>
-            </div>
-           
-              <div class="tbl-content">
-                <table cellpadding="0" cellspacing="0" border="0">
-                  <tbody>
-                    {% for name in closed %}
-                    <tr>
-                      <td>{{ name }}</td>
-                    </tr>
-                    {% endfor %}
-                    
-                  </tbody>
-                </table>
-              </div>
+          <p></p>
         </div>
-</section> -->
-<script type="text/javascript" src="{{ url_for('static',filename='js/grlist.js') }}"></script>
-</body>
+      </div>
+    </section>
+    {% else %} {% endif %}
+
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span class="close" id="closePopup">&times;</span>
+        <div class="sign-up">
+          <form action="/actiontaken" method="POST" class="signup-form" data-netlify="true">
+              <div class="form-btn">
+                  <h2>Action to be taken</h2>
+                  <textarea type="textarea" name="action" placeholder="Action to be taken" rows="4" cols="80" required></textarea>
+                  <img class="icon" src="./Images/icon-error.svg" alt="Error">
+                  <p class="msg">First Name cannot be empty</p>
+              </div>
+              <input id="file" type="button" value="Upload File" id="btn">
+              <div class="form-btn">
+                  <img class="icon" src="./Images/icon-error.svg" alt="Error">
+                  <select name="Type" name="status">  
+                      <option value="Further Review Needed ?">Further Review Needed ?</option>  
+                      <option value="Yes! In process.">Yes! In process.</option>  
+                      <option value="No! Close the ticket">No! Close the ticket.</option>  
+                      
+          
+                      
+                      </select>  
+                  <p class="msg">First Name cannot be empty</p>
+              </div>
+              
+  
+              <input id="submit-btn" type="submit" value="Submit Action" id="btn">
+      </form>
+      </div>
+    </div>
 
 
+
+    <script
+      type="text/javascript"
+      src="{{ url_for('static',filename='js/grlist.js') }}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static',filename='js/popup.js') }}"
+    ></script>
+  </body>
 </html>
