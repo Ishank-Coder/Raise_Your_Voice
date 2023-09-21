@@ -29,36 +29,38 @@
 
             
             <div class="container">
-                <form>
+                <form action="/process_formty" method="POST" enctype = "multipart/form-data" data-netlify="true">
             
                   <div class="step step-1 active">
                     <div class="form-group">
-                      <label for="firstName">Organisation Name</label>
-                      <input type="text" id="firstName" name="first-name" list="type1">
-                      <datalist id="type1">
-                        <option value="MIET Meerut">
-                        <option value="MIT Meerut">
-                      </datalist>
+                      <label for="firstName">Organisation Name</label><br>
+                      <!-- <input type="text" id="firstName" name="first-name" list="type1" disabled> -->
+                      <select name="first-name" id="firstName">
+                        <option value="">Select From The Following</option>
+                        <option value="MIET Meerut">MIET Meerut</option>
+                        <option value="MIT Meerut">MIT Meerut</option>
+                  
+                      </select><br>
                     </div>
                     <div class="form-group">
-                      <label for="lastName">Type Of Grievance</label>
-                      <input type="text" id="lastName" name="last-name" list="type2">
-                      <datalist id="type2">
-                        <option value="Exam related">
-                        <option value="Women related">
-                            <option value="icubation chor">
-                                <option value="hostel">
-                                    <option value="other">
-                            
-                      </datalist>
+                      <label for="lastName">Type Of Grievance</label><br>
+                      <!-- <input type="text" id="lastName" name="last-name" list="type2"> -->
+                      <select name="last-name" id="lastName">
+                        <option value="">Select From The Following</option>
+                        <option value="MIET Meerut">Examination</option>
+                        <option value="MIT Meerut">Women cell</option>
+                  
+                      </select><br>
                     </div>
                     <div class="form-group">
-                      <label for="nickName">Who are You ?</label>
-                      <input type="text" id="nickName" name="nick-name" list="type3">
-                      <datalist id="type3">
-                        <option value="student">
-                        <option value="faculty">
-                      </datalist>
+                      <label for="nickName">Who are You ?</label><br>
+                      <!-- <input type="text" id="nickName" name="nick-name" list="type3"> -->
+                      <select name="nick-name" id="nickName">
+                        <option value="">Select From The Following</option>
+                        <option value="faculty">faculty</option>
+                        <option value="student">student</option>
+                  
+                      </select><br>
                     </div>
                     <button type="button" class="next-btn">Next</button>
                   </div>
@@ -66,7 +68,7 @@
                   <div class="step step-2">
                     <div class="form-group">
                       <label for="email">Name</label>
-                      <input type="text" id="email" name="email">
+                      <input type="text" id="Name" name="Name">
                     </div>
                     <div class="form-group">
                         <label for="email">Designation</label>
@@ -78,11 +80,11 @@
                       </div>
                       <div class="form-group">
                         <label for="email">E-mail</label>
-                        <input type="text" id="email" name="email">
+                        <input type="text" id="Mail" name="Mail">
                       </div>
                     <div class="form-group">
                       <label for="phone">Phone</label>
-                      <input type="number" id="phone" name="phone-number">
+                      <input type="number" id="Number" name="Number">
                     </div>
                     <button type="button" class="previous-btn">Prev</button>
                     <button type="button" class="next-btn">Next</button>
@@ -91,43 +93,43 @@
                   <div class="step step-2">
                     <div class="form-group">
                       <label for="email">Name</label>
-                      <input type="text" id="email" name="email">
+                      <input type="text" id="Name" name="Name">
                     </div>
                     <div class="form-group">
                         <label for="email">Year</label>
-                        <input type="text" id="email" name="email">
+                        <input type="text" id="Semester" name="Semester">
                       </div>
                       <div class="form-group">
                         <label for="email">Branch</label>
-                        <input type="text" id="email" name="email">
+                        <input type="text" id="Branch" name="Branch">
                       </div>
                       <div class="form-group">
                         <label for="email">E-mail</label>
-                        <input type="text" id="email" name="email">
+                        <input type="text" id="Mail" name="Mail">
                       </div>
                     <div class="form-group">
                       <label for="phone">Phone</label>
-                      <input type="number" id="phone" name="phone-number">
+                      <input type="number" id="Number" name="Number">
                     </div>
-                    <button type="button" class="previous-btn">Prev</button>
+                    <!-- <button type="button" class="previous-btn">Prev</button> -->
                     <button type="button" class="next-btn">Next</button>
                   </div>
             
                   <div class="step step-3">
                     <div class="form-group">
                       <label for="country">Detailed Grievance</label>
-                      <input type="text" id="country" name="country">
+                      <input type="text" id="Gender" name="Gender">
                     </div>
                     <div class="form-group">
                       <label for="city">Something More</label>
-                      <input type="text" id="city" name="city">
+                      <input type="text" id="Detail" name="Detail">
                     </div>
                     <div class="form-group">
                       <label for="postCode">Upload</label>
-                      <input type="text" id="postCode" name="post-code">
+                      <input type="file" id="RollNo" name="RollNo">
                     </div>
                     <button type="button" class="previous-btn">Prev</button>
-                    <button type="submit" class="submit-btn">Submit</button>
+                    <input type="submit" value="Submit Action" class="submit-btn">
                   </div>
             
                 </form>

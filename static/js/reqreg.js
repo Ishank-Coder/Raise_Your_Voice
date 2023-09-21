@@ -6,7 +6,7 @@ const form = document.querySelector("form");
 nextBtn.forEach((button) => {
   button.addEventListener("click", () => {
     x = document.getElementById("nickName").value;
-    console.log("inputs",x);
+    // console.log("inputs",x);
     changeStep("next",x);
   });
 });
@@ -23,7 +23,7 @@ form.addEventListener("submit", (e) => {
     const { name, value } = input;
     inputs.push({ name, value });
   });
-  console.log(inputs);
+  // console.log(inputs);
   form.reset();
 });
 

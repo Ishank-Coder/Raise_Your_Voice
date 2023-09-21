@@ -8,10 +8,12 @@ def process_form(request,db):
     tog = request.form.get('Detail')
     Rollno = request.form.get('RollNo')
     gender = request.form.get('Gender')
-    who = request.form.get('Type')
-    
+    who = request.form.get('nickName')
+    print(1234456)
     data = {"name": name,"gender" : gender,"email": email,"num": number,"sem": sem,"branch": branch,"RollNo":Rollno ,"Type":who}
     send_data(tog,data,db)
+
+
 
 
 def at(request,db):
@@ -32,7 +34,7 @@ def send_data(tog,data,db):
     # # Replace with the desired location in the database
     # ref.child("name").push(name)
     # return 'Data sent successfully'
-    abc = "todoto"
+    print("todoto")
     ref.child("ConvenerRelatedGrievance").child(tog).child(data["num"]).child("StudentGrievance").set(data)
 
 def popup(request,db):
