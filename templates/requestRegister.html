@@ -29,9 +29,9 @@
 
             
             <div class="container">
-                <form action="/process_formty" method="POST" enctype = "multipart/form-data" data-netlify="true">
+                <form action="process_formty" method="POST" enctype = "multipart/form-data" data-netlify="true">
             
-                  <div class="step step-1 active">
+                  <div class="step step-1 active" id="step1">
                     <div class="form-group">
                       <label for="firstName">Organisation Name</label><br>
                       <!-- <input type="text" id="firstName" name="first-name" list="type1" disabled> -->
@@ -62,10 +62,10 @@
                   
                       </select><br>
                     </div>
-                    <button type="button" class="next-btn">Next</button>
+                    <input type="button" class="next-btn">Next</input>
                   </div>
             
-                  <div class="step step-2">
+                  <div class="step step-2" id="step2">
                     <div class="form-group">
                       <label for="email">Name</label>
                       <input type="text" id="Name" name="Name">
@@ -86,11 +86,11 @@
                       <label for="phone">Phone</label>
                       <input type="number" id="Number" name="Number">
                     </div>
-                    <button type="button" class="previous-btn">Prev</button>
-                    <button type="button" class="next-btn">Next</button>
+                    <input type="button" class="previous-btn">Prev</input>
+                    <input type="button" class="next-btn">Next</input>
                   </div>
 
-                  <div class="step step-2">
+                  <div class="step step-2" id="step3">
                     <div class="form-group">
                       <label for="email">Name</label>
                       <input type="text" id="Name" name="Name">
@@ -112,10 +112,10 @@
                       <input type="number" id="Number" name="Number">
                     </div>
                     <!-- <button type="button" class="previous-btn">Prev</button> -->
-                    <button type="button" class="next-btn">Next</button>
+                    <input type="button" class="next-btn">Next</input>
                   </div>
             
-                  <div class="step step-3">
+                  <div class="step step-3" id="step4">
                     <div class="form-group">
                       <label for="country">Detailed Grievance</label>
                       <input type="text" id="Gender" name="Gender">
@@ -128,7 +128,7 @@
                       <label for="postCode">Upload</label>
                       <input type="file" id="RollNo" name="RollNo">
                     </div>
-                    <button type="button" class="previous-btn">Prev</button>
+                    <!-- <input type="button" class="previous-btn">Prev</input> -->
                     <input type="submit" value="Submit Action" class="submit-btn">
                   </div>
             

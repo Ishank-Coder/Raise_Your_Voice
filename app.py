@@ -75,13 +75,20 @@ firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://grievance-2ba24-default-rtdb.firebaseio.com/'
 })
 
+# @app.route('/process_formty', methods=['POST'])
+# def process_formty():
+#     print(request.form)
+#     print("yha toh aaya1")
+#     # process_form(request,db)
+#     # print("yha toh aaya")
+#     # return redirect(url_for("home"))
+
 @app.route('/process_formty', methods=['POST'])
 def process_formty():
-    
-    print("yha toh aaya1")
-    # process_form(request,db)
-    # print("yha toh aaya")
-    # return redirect(url_for("home"))
+    print(request.form)# Debugging: Print form data to console
+    process_form(request,db)
+    return redirect(url_for("home"))  # Make sure you have a return statement here
+
 
 
 @app.route('/actiontaken', methods=['POST'])
