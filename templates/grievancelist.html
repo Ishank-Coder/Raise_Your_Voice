@@ -96,13 +96,13 @@
           <form action="/actiontaken" method="POST" class="signup-form" data-netlify="true">
               <div class="form-btn">
                   <h2>Action to be taken</h2>
-                  <textarea type="textarea" name="action" placeholder="Action to be taken" rows="4" cols="80" required></textarea>
-                  <img class="icon" src="./Images/icon-error.svg" alt="Error">
+                  <textarea type="textarea" name="action" placeholder="Action to be taken" rows="4" cols="80" style="resize:none" required></textarea>
+                  <!-- <img class="icon" src="./Images/icon-error.svg" alt="Error"> -->
                   <p class="msg">First Name cannot be empty</p>
               </div>
               <input id="file" type="button" value="Upload File" id="btn">
               <div class="form-btn">
-                  <img class="icon" src="./Images/icon-error.svg" alt="Error">
+                  <!-- <img class="icon" src="./Images/icon-error.svg" alt="Error"> -->
                   <select name="Type" name="status">  
                       <option value="Further Review Needed ?">Further Review Needed ?</option>  
                       <option value="Yes! In process.">Yes! In process.</option>  
@@ -118,6 +118,7 @@
               <input id="submit-btn" type="submit" value="Submit Action" id="btn">
       </form>
       </div>
+    </div>
     </div>
 
 
