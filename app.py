@@ -4,7 +4,7 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
 from dataEntry import process_form,popup
-from dataDisplay import display
+from dataDisplay import display, displaypopup
 import dataEntry
 from flask_wtf import FlaskForm
 from wtforms import FileField, SubmitField
@@ -40,10 +40,10 @@ def registerReq():
 def admin():
     return redirect(url_for("home"))
 
-# @app.route("/grievancelist.html",methods=["GET", "POST"])
-# def grievancelist():
-#     new,pending,closed = dataDisplay.displaypopup(request, db)
-#     return render_template("grievancelist.html",new=new,pending=pending,closed=closed)
+@app.route("/grievancelist.html",methods=["GET", "POST"])
+def grievancelist():
+    new,pending,closed = displaypopup(request, db)
+    return render_template("grievancelist.html",new=new,pending=pending,closed=closed)
 
 
 
@@ -93,7 +93,17 @@ def att():
 @app.route('/popup', methods=["GET",'POST'])
 def popsup():
     newji=popup(request,db)
-    return render_template("grievancelist.html",new=newji)
+    new,pending,closed = displaypopup(db)
+    flag_new,flag_pend,flag_closed= True,True,True
+    if len(new)==0:
+        flag_new = False
+    if len(pending)==0:
+        flag_pend = False
+    if len(closed)==0:
+        flag_closed = False
+    print(flag_closed,flag_new,flag_pend)
+    return render_template("grievancelist.html",new=new,pending=pending,closed=closed,flag_new=flag_new,flag_pend=flag_pend,flag_closed=flag_closed)
+    # return render_template("grievancelist.html",new=newji)
 
 # @app.route('/detail', methods=["GET",'POST'])
 # def details():

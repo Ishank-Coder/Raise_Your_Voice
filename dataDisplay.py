@@ -12,7 +12,7 @@ def displaypopup(db):
     
     ref = db.reference('ConvenerRelatedGrievance/Exam')
     data = ref.get()
-    print(data)
+    
     news = []
     pend=[]
     close = []
@@ -22,7 +22,10 @@ def displaypopup(db):
                 news.append(value['StudentGrievance']['name'])
             elif value['StudentGrievance']['status'] == 'pending':
                 pend.append(value['StudentGrievance']['name'])
-            else:
+            elif value['StudentGrievance']['status'] == 'resolved':
                 close.append(value['StudentGrievance']['name'])
+            else:
+                continue
 
-    return(news)
+    print(news,pend,close)
+    return(news,pend,close)
