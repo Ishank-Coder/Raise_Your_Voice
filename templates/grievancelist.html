@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link
       rel="stylesheet"
       href="{{ url_for('static',filename='css/grlist.css') }}"
@@ -35,7 +37,8 @@
               {% for name in new %}
               <tr>
                 <td><a href="/action.html"> {{ name }}</a></td>
-                <td><span class="an">●</span></td>
+                <td class="itemtab"><span class="an">●</span></td>
+                <td class="itemtab"><a class =itemtable id="new_action1" href="#"><i class="fa fa-plus"></i></a></td>
               </tr>
               {% endfor %}
             </tbody>
@@ -56,7 +59,12 @@
               <tr>
                 <td>{{ name }}</td>
                 <td class="itemtab"><span class="ap">●</span></td>
-                <td class="itemtab"><a class =itemtable  href="#"><i class="fa fa-history" aria-hidden="true"></i></a></td>
+                <td class="itemtab">
+                  <a class="itemtable history-button" href="#">
+                    <i class="fa fa-history" aria-hidden="true"></i>
+                  </a>
+                </td>
+                
                 <td class="itemtab"><a class =itemtable id="new_action" href="#"><i class="fa fa-plus"></i></a></td>
               </tr>
               {% endfor %}
@@ -78,6 +86,7 @@
               <tr>
                 <td>{{ name }}</td>
                 <td><span class="ac">●</span></td>
+                
               </tr>
               {% endfor %}
             </tbody>
@@ -88,6 +97,51 @@
       </div>
     </section>
     {% else %} {% endif %}
+
+    <div id="history-popup" class="popup1">
+      <div class="popup-content1">
+        <span class="close1" id="closeHistoryPopup">&times;</span>
+        <div class="history-content">
+          <!-- Dropdown 1 -->
+          <div class="history-dropdown">
+            <button class="dropdown-btn">Action Dated - (11-08-2023)
+              <i class="fa fa-chevron-down"></i>
+              </button>
+            <div class="dropdown-content">
+              <p>Name: Suvansh Jindal</p>
+              <p>Grievance Type: Exam</p>
+              <p>Grievance Details: Invigilator humiliated me in front of the entire class as I reached late, but it wasnt my fault. It raining heavily outside </p>
+              <p>Action Taken: Investigating The Invigilator</p>
+              <p>Documents:</p>
+              <ul>
+                <li><a href="path/to/document1.pdf">Document 1</a></li>
+                <li><a href="path/to/document2.jpg">Document 2</a></li>
+              </ul>
+            </div>
+          </div>
+        
+          <!-- Dropdown 2 -->
+          <div class="history-dropdown">
+            <button class="dropdown-btn">Action Dated - (15-08-2023)<i class="fa fa-chevron-down"></i></button>
+            <div class="dropdown-content">
+              <p>Name: Suvansh Jindal</p>
+              <p>Grievance Type: Exam</p>
+              <p>Grievance Details: Invigilator humiliated me in front of the entire class as I reached late, but it wasnt my fault. It raining heavily outside </p>
+              <p>Action Taken: Further Investigation required and feedbacks are being taken</p>
+              <p>Documents:</p>
+              <ul>
+                <li><a href="path/to/document3.pdf">Document 3</a></li>
+                <!-- Add more documents as needed -->
+              </ul>
+            </div>
+          </div>
+        
+          <!-- Add more dropdowns as needed -->
+        </div>
+        
+      </div>
+    </div>
+    
 
     <div id="popup" class="popup">
       <div class="popup-content">
@@ -131,5 +185,10 @@
       type="text/javascript"
       src="{{ url_for('static',filename='js/popup.js') }}"
     ></script>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static',filename='js/popuphist.js') }}"
+    ></script>
+    
   </body>
 </html>

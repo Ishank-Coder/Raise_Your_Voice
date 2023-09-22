@@ -147,7 +147,7 @@ body{
     transform: translate(-50%, -50%);
   }
 
-  .popup {
+  .popup1 {
     display: none;
     position: fixed;
     top: 0;
@@ -159,11 +159,11 @@ body{
     align-items: center;
   }
   
-  .popup-content {
+  .popup-content1 {
     background: #fff;
     padding: 20px;
     border-radius: 8px;
-    max-width: 600px;
+    max-width: 95%;
     width: 100%;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
@@ -214,7 +214,7 @@ body{
   
   #file {
     padding: 10px;
-    background: #007bff;
+    background: #0f3950;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -223,7 +223,7 @@ body{
   
   #submit-btn {
     padding: 10px;
-    background: #28a745;
+    background: #0f3950;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -231,13 +231,137 @@ body{
   }
   
   
-  .close {
+  .close1 {
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 20px;
+    font-size: 37px;
     cursor: pointer;
   }
+
+  #history-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #ccc;
+  max-width: 50%;
+  max-height: 50%;
+  overflow-y: auto;
+}
+/* .history-dropdown {
+  margin-bottom: 10px;
+}
+
+.dropdown-btn {
+  background-color: #f9f9f9;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: left;
+  width: 100%;
+}
+
+.dropdown-content {
+  display: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.dropdown-content p {
+  margin: 0;
+}
+
+.dropdown-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.dropdown-content ul li {
+  margin: 5px 0;
+}
+
+.dropdown-content ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-btn.active + .dropdown-content {
+  display: block;
+} */
+.history-dropdown {
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-btn {
+  background-color: #f9f9f9;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: left;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  border-radius: 8px 8px 0 0;
+}
+
+.dropdown-content {
+  display: none;
+  padding: 10px;
+}
+
+.dropdown-content p {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.dropdown-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.dropdown-content ul li {
+  margin: 10px 0;
+}
+
+.dropdown-content ul li a {
+  text-decoration: none;
+  color: #0f3950;
+  font-weight: bold;
+}
+
+.dropdown-btn.active + .dropdown-content {
+  display: block;
+}
+/* Your existing CSS code here */
+
+.fa-chevron-down {
+  float: right;
+  margin-top: 5px;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-btn.active .fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+
+
+/* .history-content { */
+  /* Add styling for history content here */
+/* } */
+
 
 
   /* demo styles */
