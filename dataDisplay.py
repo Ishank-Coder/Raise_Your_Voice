@@ -2,15 +2,15 @@ def display(db):
     
     ref = db.reference()
     data = ref.child("ConvenerRelatedGrievance").child("Exam").child("07060078507").child("StudentGrievance").get()
-    print(data)
+    
     return(data)
     # todo = db.child("todo").get()
     # to = todo.val()
     # return(to)
 
-def displaypopup(db):
+def displaypopup(tog,db):
     
-    ref = db.reference('ConvenerRelatedGrievance/Exam')
+    ref = db.reference(f'ConvenerRelatedGrievance/{tog}')
     data = ref.get()
     
     news = []
@@ -27,5 +27,5 @@ def displaypopup(db):
             else:
                 continue
 
-    print(news,pend,close)
+    
     return(news,pend,close)

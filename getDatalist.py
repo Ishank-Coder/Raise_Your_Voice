@@ -2,7 +2,7 @@ def getlist(request,db):
     
     ref = db.reference('ConvenerRelatedGrievance/Exam')
     data = ref.get()
-    print(data)
+  
     news = []
     pend=[]
     close = []

@@ -57,15 +57,23 @@ def send_data(type,data,db,category,num):
     # # Replace with the desired location in the database
     # ref.child("name").push(name)
     # return 'Data sent successfully'
-    print("todoto")
+   
     ref.child("ConvenerRelatedGrievance").child(type).child(num).child(category).set(data)
 
 def popup(request,db):
     from dataDisplay import displaypopup
-    Username = request.form.get('username')
-    Password = request.form.get('password')
-    data = {"name": Username,"key" : Password}
-    st=displaypopup(db)
+    username = request.form.get('username')
+    password = request.form.get('password')
+    if username == 'Exam':
+        if password == 'pp':
+            st = "Exam"
+    elif username == 'Woman':
+        if password == 'Woman_Manager_MIET':
+            st = "Woman"
+            
+    
+    # data = {"name": Username,"key" : Password}
+    # st=displaypopup(db)
     return(st)
 
 # def sendpopupdata(tog,data,db):

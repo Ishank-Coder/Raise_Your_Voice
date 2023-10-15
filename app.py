@@ -30,7 +30,7 @@ def home():
 
 @app.route("/requestRegister.html",methods=["GET", "POST"])
 def registerReq():
-    print(3434)
+    
     return render_template("requestRegister.html")
 
 @app.route("/admin")
@@ -51,7 +51,7 @@ firebase_admin.initialize_app(cred, {
 
 @app.route('/process_formty', methods=['POST'])
 def process_formty():
-    print(request.form)# Debugging: Print form data to console
+    
     process_form(request,db)
     return redirect(url_for("home"))  # Make sure you have a return statement here
 
@@ -66,7 +66,8 @@ def att():
 @app.route('/popup', methods=["GET",'POST'])
 def popsup():
     newji=popup(request,db)
-    new,pending,closed = displaypopup(db)
+            
+    new,pending,closed = displaypopup(newji,db)
     flag_new,flag_pend,flag_closed= True,True,True
     if len(new)==0:
         flag_new = False
@@ -74,14 +75,17 @@ def popsup():
         flag_pend = False
     if len(closed)==0:
         flag_closed = False
-    print(flag_closed,flag_new,flag_pend)
+    
     return render_template("grievancelist.html",new=new,pending=pending,closed=closed,flag_new=flag_new,flag_pend=flag_pend,flag_closed=flag_closed)
     # return render_template("grievancelist.html",new=newji)
 
 @app.route('/action.html', methods=["GET",'POST'])
 def details():
-    
-    return render_template("action.html")
+    to=display(db)
+    # form = UploadFileForm()
+
+    return render_template('action.html',to = to)
+    # return render_template("action.html")
 
 
 @app.route("/admindetail.html",methods=["GET", "POST"])
@@ -91,6 +95,13 @@ def admindetail():
 @app.route("/adminpanel.html",methods=["GET", "POST"])
 def adminpanel():
     return render_template("adminpanel.html")
+
+# @app.route("")
+# def taking():
+#     to=display(db)
+#     form = UploadFileForm()
+
+#     return render_template('action.html',to = to, form=form)
 
 if __name__ == '__main__':
     app.run()
