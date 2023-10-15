@@ -27,9 +27,6 @@ class UploadFileForm(FlaskForm):
 def home():
     return render_template( "home.html")
 
-# @app.route("/<name>")
-# def user(name):
-#     return f"Hello{name}"
 
 @app.route("/requestRegister.html",methods=["GET", "POST"])
 def registerReq():
@@ -46,42 +43,11 @@ def grievancelist():
     return render_template("grievancelist.html",new=new,pending=pending,closed=closed)
 
 
-
-# @app.route("/upload",methods=["GET","POST"])
-
-# def upload_file():
-#     process_form(request,db)
-#     if 'file' in request.files:
-#         file = request.files['file']
-#         filename = secure_filename(file.filename)
-#         # secure_filename = secure_filename(file.filename)
-#         # Here you should save the file
-#         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        
-    
-#     return redirect(url_for("home"))
-# def taking():
-#     to=display(db)
-#     form = UploadFileForm()
-#     if form.validate_on_submit():
-#         file = form.file.data # First grab the file
-#         file.save(os.path.join(os.path.abspath(os.path.dirname(__file__)),app.config['UPLOAD_FOLDER'],secure_filename(file.filename))) # Then save the file
-#         return "File has been uploaded."
-#     return render_template('action.html',to = to, form=form)
-
-
 cred = credentials.Certificate('static//grievance-2ba24-firebase-adminsdk-kg434-599944587c.json')
 firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://grievance-2ba24-default-rtdb.firebaseio.com/'
 })
 
-# @app.route('/process_formty', methods=['POST'])
-# def process_formty():
-#     print(request.form)
-#     print("yha toh aaya1")
-#     # process_form(request,db)
-#     # print("yha toh aaya")
-#     # return redirect(url_for("home"))
 
 @app.route('/process_formty', methods=['POST'])
 def process_formty():
@@ -112,10 +78,10 @@ def popsup():
     return render_template("grievancelist.html",new=new,pending=pending,closed=closed,flag_new=flag_new,flag_pend=flag_pend,flag_closed=flag_closed)
     # return render_template("grievancelist.html",new=newji)
 
-# @app.route('/detail', methods=["GET",'POST'])
-# def details():
+@app.route('/action.html', methods=["GET",'POST'])
+def details():
     
-#     return render_template("action.html")
+    return render_template("action.html")
 
 
 @app.route("/admindetail.html",methods=["GET", "POST"])
