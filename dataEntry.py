@@ -1,10 +1,19 @@
+
 def process_form(request,db):
-    from flask import Flask, redirect, render_template, url_for 
+    from flask import Flask, redirect, render_template, url_for
+    from datetime import datetime
+    now = datetime.now()
+    from icecream import ic
+    # Format it as 'YYYYMMDDHHMM'
+    timestamp_str = now.strftime("%Y%m%d%H%M")
+    # name = request.form.get('name')
+# Get the current date and time
     orgname = request.form.get('orgname')
     typegr = request.form.get('typegr')
     category = request.form.get('category')
-    name = request.form.get('Name')
-    
+    nam = request.form.get('Nam')
+    ic(nam)
+    grievanceid = typegr[0:2] + timestamp_str + category[0:2] + orgname[0:4]
     #facutly details
     desig = request.form.get('Desig')
     dept = request.form.get('dept')
@@ -25,8 +34,8 @@ def process_form(request,db):
     # gender = request.form.get('Gender')
     # who = request.form.get('nickName')
     status = "new"
-    datastu = {"name":name,"year":year,"branch":branch,"email":email,"Phoneno":phno,"detailedgr":detailedgr,"more":details,"status":status}
-    datafac = {"name":name,"designation":desig,"Department":dept,"email":mail,"Phoneno":phnumber,"detailedgr":detailedgr,"more":details,"status":status}
+    datastu = {"name":nam,'grievanceid':grievanceid,"year":year,"branch":branch,"email":email,"Phoneno":phno,"detailedgr":detailedgr,"more":details,"status":status}
+    datafac = {"name":nam,'grievanceid':grievanceid,"designation":desig,"Department":dept,"email":mail,"Phoneno":phnumber,"detailedgr":detailedgr,"more":details,"status":status}
     if category=="faculty":    
         send_data(typegr,datafac,db,category,phnumber) 
     else:
@@ -74,7 +83,7 @@ def popup(request,db):
     
     # data = {"name": Username,"key" : Password}
     # st=displaypopup(db)
-    return(st)
+    return(st,username)
 
 # def sendpopupdata(tog,data,db):
 #     ref = db.reference()

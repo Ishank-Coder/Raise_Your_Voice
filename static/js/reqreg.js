@@ -38,7 +38,7 @@ function changeStep(btn,x) {
       index++;
 
     }
-    else if (x === "student"){
+    else if (x === "StudentGrievance"){
       if(index===0){
         index++;
       }
@@ -49,7 +49,7 @@ function changeStep(btn,x) {
     index++;
   } else if (btn === "prev") {
     if(index===3){
-      if(x!=="student"){
+      if(x!=="StudentGrievance"){
         index--;
       }
       

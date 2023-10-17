@@ -22,9 +22,9 @@
         />
       </div>
       <ul class="nav-list">
-        <li><a href="#NewTickets">New Tickets</a></li>
-        <li><a href="#OngoingTickets">Ongoing Tickets</a></li>
+        
         <li><a href="#ClosedTickets">Closed Tickets</a></li>
+        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
       </ul>
     </nav>
     {% if flag_new %}
@@ -36,9 +36,24 @@
             <tbody>
               {% for name in new %}
               <tr>
-                <td><a href="/action.html"> {{ name }}</a></td>
+                <td><a href="{{ url_for('details',name = name) }}"> {{ name[0] }}</a></td>
+                <td><a href="{{ url_for('details',name = name) }}"> {{ name[1] }}</a></td>
                 <td class="itemtab"><span class="an">●</span></td>
-                <td class="itemtab"><a class =itemtable id="new_action1" href="#"><i class="fa fa-plus"></i></a></td>
+                <td class="itemtab"><a class =itemtable id="new_action1" href="{{ url_for('details',name = name) }}"><i class="fa fa-plus"></i></a></td>
+              </tr>
+              {% endfor %}
+              {% for name in pending %}
+              <tr>
+                <td>{{ name[0] }}</td>
+                <td>{{ name[1] }}</td>
+                <td class="itemtab"><span class="ap">●</span></td>
+                <td class="itemtab">
+                  <a class="itemtable history-button" href="#">
+                    <i class="fa fa-history" aria-hidden="true"></i>
+                  </a>
+                </td>
+                
+                <td class="itemtab"><a class =itemtable href="{{ url_for('details',name = name) }}"><i class="fa fa-plus"></i></a></td>
               </tr>
               {% endfor %}
             </tbody>
@@ -50,7 +65,7 @@
       <!-- </form> -->
     </section>
     {% else %} {% endif %} {% if flag_pend %}
-    <section class="new">
+    <!-- <section class="new">
       <div id="OngoingTickets">
          <div class="tbl-content">
           <table cellpadding="0" cellspacing="0" border="0">
@@ -96,7 +111,7 @@
         </div>
       </div>
     </section>
-    {% else %} {% endif %}
+    {% else %} {% endif %} -->
 
     <div id="history-popup" class="popup1">
       <div class="popup-content1">

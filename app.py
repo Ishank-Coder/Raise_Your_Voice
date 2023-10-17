@@ -13,6 +13,7 @@ import os
 from werkzeug.utils import secure_filename
 from wtforms.validators import InputRequired
 import getDatalist
+from flask import session
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'supersecretkey'
@@ -65,9 +66,9 @@ def att():
 
 @app.route('/popup', methods=["GET",'POST'])
 def popsup():
-    newji=popup(request,db)
+    newji,username=popup(request,db)
             
-    new,pending,closed = displaypopup(newji,db)
+    new,pending,closed,data = displaypopup(newji,db)
     flag_new,flag_pend,flag_closed= True,True,True
     if len(new)==0:
         flag_new = False
@@ -75,18 +76,33 @@ def popsup():
         flag_pend = False
     if len(closed)==0:
         flag_closed = False
-    
-    return render_template("grievancelist.html",new=new,pending=pending,closed=closed,flag_new=flag_new,flag_pend=flag_pend,flag_closed=flag_closed)
+    set_session("username",username)
+    set_session("data",data)
+    return render_template("grievancelist.html",new=new,pending=pending,closed=closed,flag_new=flag_new,flag_pend=flag_pend,flag_closed=flag_closed,data=data)
     # return render_template("grievancelist.html",new=newji)
 
-@app.route('/action.html', methods=["GET",'POST'])
-def details():
-    to=display(db)
+@app.route('/action.html/<name>', methods=["GET",'POST'])
+def details(name):
+    set_session('name',name)
+    
+    gid = name[1]
+    data = get_session('data')
+    username = get_session('username')
+   
+    to=display(db,name,data,username)
+    # print(to)
+    # set_session('to',to)
+    return render_template("action.html",toll=to)
     # form = UploadFileForm()
 
-    return render_template('action.html',to = to)
+    # return redirect(url_for('action'))
     # return render_template("action.html")
 
+# @app.route("/action.html",methods = ["GET","POST"])
+# def action():
+#     toll = get_session('to')
+#     print(toll)
+#     return render_template("action.html",toll=toll)
 
 @app.route("/admindetail.html",methods=["GET", "POST"])
 def admindetail():
@@ -95,6 +111,21 @@ def admindetail():
 @app.route("/adminpanel.html",methods=["GET", "POST"])
 def adminpanel():
     return render_template("adminpanel.html")
+
+@app.route('/logout')
+def logout():
+    # Clear the session
+    session.clear()
+    # Redirect to the desired page after logout (e.g., home page)
+    return redirect(url_for('home'))
+
+def set_session(key,value):
+    session[key] = value  # Set a session variable
+    
+
+def get_session(key):
+    # username = session.get('username')  # Get a session variable
+    return session.get(key)
 
 # @app.route("")
 # def taking():
