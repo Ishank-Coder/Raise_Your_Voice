@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link
       rel="stylesheet"
       href="{{ url_for('static',filename='css/grlist.css') }}"
@@ -20,9 +22,9 @@
         />
       </div>
       <ul class="nav-list">
-        <li><a href="#NewTickets">New Tickets</a></li>
-        <li><a href="#OngoingTickets">Ongoing Tickets</a></li>
+        
         <li><a href="#ClosedTickets">Closed Tickets</a></li>
+        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
       </ul>
     </nav>
     {% if flag_new %}
@@ -34,8 +36,24 @@
             <tbody>
               {% for name in new %}
               <tr>
-                <td><a href="/action.html"> {{ name }}</a></td>
-                <td><span class="an">●</span></td>
+                <td><a href="{{ url_for('details',name = name) }}"> {{ name[0] }}</a></td>
+                <td><a href="{{ url_for('details',name = name) }}"> {{ name[1] }}</a></td>
+                <td class="itemtab"><span class="an">●</span></td>
+                <td class="itemtab"><a class =itemtable id="new_action1" href="{{ url_for('details',name = name) }}"><i class="fa fa-plus"></i></a></td>
+              </tr>
+              {% endfor %}
+              {% for name in pending %}
+              <tr>
+                <td>{{ name[0] }}</td>
+                <td>{{ name[1] }}</td>
+                <td class="itemtab"><span class="ap">●</span></td>
+                <td class="itemtab">
+                  <a class="itemtable history-button" href="#">
+                    <i class="fa fa-history" aria-hidden="true"></i>
+                  </a>
+                </td>
+                
+                <td class="itemtab"><a class =itemtable href="{{ url_for('details',name = name) }}"><i class="fa fa-plus"></i></a></td>
               </tr>
               {% endfor %}
             </tbody>
@@ -47,7 +65,7 @@
       <!-- </form> -->
     </section>
     {% else %} {% endif %} {% if flag_pend %}
-    <section class="new">
+    <!-- <section class="new">
       <div id="OngoingTickets">
          <div class="tbl-content">
           <table cellpadding="0" cellspacing="0" border="0">
@@ -56,7 +74,12 @@
               <tr>
                 <td>{{ name }}</td>
                 <td class="itemtab"><span class="ap">●</span></td>
-                <td class="itemtab"><a class =itemtable  href="#"><i class="fa fa-history" aria-hidden="true"></i></a></td>
+                <td class="itemtab">
+                  <a class="itemtable history-button" href="#">
+                    <i class="fa fa-history" aria-hidden="true"></i>
+                  </a>
+                </td>
+                
                 <td class="itemtab"><a class =itemtable id="new_action" href="#"><i class="fa fa-plus"></i></a></td>
               </tr>
               {% endfor %}
@@ -78,6 +101,7 @@
               <tr>
                 <td>{{ name }}</td>
                 <td><span class="ac">●</span></td>
+                
               </tr>
               {% endfor %}
             </tbody>
@@ -87,7 +111,52 @@
         </div>
       </div>
     </section>
-    {% else %} {% endif %}
+    {% else %} {% endif %} -->
+
+    <div id="history-popup" class="popup1">
+      <div class="popup-content1">
+        <span class="close1" id="closeHistoryPopup">&times;</span>
+        <div class="history-content">
+          <!-- Dropdown 1 -->
+          <div class="history-dropdown">
+            <button class="dropdown-btn">Action Dated - (11-08-2023)
+              <i class="fa fa-chevron-down"></i>
+              </button>
+            <div class="dropdown-content">
+              <p>Name: Suvansh Jindal</p>
+              <p>Grievance Type: Exam</p>
+              <p>Grievance Details: Invigilator humiliated me in front of the entire class as I reached late, but it wasnt my fault. It raining heavily outside </p>
+              <p>Action Taken: Investigating The Invigilator</p>
+              <p>Documents:</p>
+              <ul>
+                <li><a href="path/to/document1.pdf">Document 1</a></li>
+                <li><a href="path/to/document2.jpg">Document 2</a></li>
+              </ul>
+            </div>
+          </div>
+        
+          <!-- Dropdown 2 -->
+          <div class="history-dropdown">
+            <button class="dropdown-btn">Action Dated - (15-08-2023)<i class="fa fa-chevron-down"></i></button>
+            <div class="dropdown-content">
+              <p>Name: Suvansh Jindal</p>
+              <p>Grievance Type: Exam</p>
+              <p>Grievance Details: Invigilator humiliated me in front of the entire class as I reached late, but it wasnt my fault. It raining heavily outside </p>
+              <p>Action Taken: Further Investigation required and feedbacks are being taken</p>
+              <p>Documents:</p>
+              <ul>
+                <li><a href="path/to/document3.pdf">Document 3</a></li>
+                <!-- Add more documents as needed -->
+              </ul>
+            </div>
+          </div>
+        
+          <!-- Add more dropdowns as needed -->
+        </div>
+        
+      </div>
+    </div>
+    
 
     <div id="popup" class="popup">
       <div class="popup-content">
@@ -96,13 +165,13 @@
           <form action="/actiontaken" method="POST" class="signup-form" data-netlify="true">
               <div class="form-btn">
                   <h2>Action to be taken</h2>
-                  <textarea type="textarea" name="action" placeholder="Action to be taken" rows="4" cols="80" required></textarea>
-                  <img class="icon" src="./Images/icon-error.svg" alt="Error">
+                  <textarea type="textarea" name="action" placeholder="Action to be taken" rows="4" cols="80" style="resize:none" required></textarea>
+                  <!-- <img class="icon" src="./Images/icon-error.svg" alt="Error"> -->
                   <p class="msg">First Name cannot be empty</p>
               </div>
               <input id="file" type="button" value="Upload File" id="btn">
               <div class="form-btn">
-                  <img class="icon" src="./Images/icon-error.svg" alt="Error">
+                  <!-- <img class="icon" src="./Images/icon-error.svg" alt="Error"> -->
                   <select name="Type" name="status">  
                       <option value="Further Review Needed ?">Further Review Needed ?</option>  
                       <option value="Yes! In process.">Yes! In process.</option>  
@@ -119,6 +188,7 @@
       </form>
       </div>
     </div>
+    </div>
 
 
 
@@ -130,5 +200,10 @@
       type="text/javascript"
       src="{{ url_for('static',filename='js/popup.js') }}"
     ></script>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static',filename='js/popuphist.js') }}"
+    ></script>
+    
   </body>
 </html>

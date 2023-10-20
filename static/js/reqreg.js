@@ -6,7 +6,7 @@ const form = document.querySelector("form");
 nextBtn.forEach((button) => {
   button.addEventListener("click", () => {
     x = document.getElementById("nickName").value;
-    console.log("inputs",x);
+    // console.log("inputs",x);
     changeStep("next",x);
   });
 });
@@ -16,16 +16,16 @@ prevBtn.forEach((button) => {
   });
 });
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const inputs = [];
-  form.querySelectorAll("input").forEach((input) => {
-    const { name, value } = input;
-    inputs.push({ name, value });
-  });
-  console.log(inputs);
-  form.reset();
-});
+// form.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   const inputs = [];
+//   form.querySelectorAll("input").forEach((input) => {
+//     const { name, value } = input;
+//     inputs.push({ name, value });
+//   });
+//   // console.log(inputs);
+//   form.reset();
+// });
 
 function changeStep(btn,x) {
   let index = 0;
@@ -38,7 +38,7 @@ function changeStep(btn,x) {
       index++;
 
     }
-    else if (x === "student"){
+    else if (x === "StudentGrievance"){
       if(index===0){
         index++;
       }
@@ -49,7 +49,7 @@ function changeStep(btn,x) {
     index++;
   } else if (btn === "prev") {
     if(index===3){
-      if(x!=="student"){
+      if(x!=="StudentGrievance"){
         index--;
       }
       
@@ -89,3 +89,34 @@ function changeStep(btn,x) {
 //     return valid; // return the valid status
 //   }
   
+// document.addEventListener('DOMContentLoaded', function() {
+//   const form = document.querySelector('form');
+//   const steps = form.querySelectorAll('.step');
+//   let currentStep = 0;
+
+//   function showStep(stepNumber) {
+//     steps.forEach((step, index) => {
+//       if (index === stepNumber) {
+//         step.classList.add('active');
+//       } else {
+//         step.classList.remove('active');
+//       }
+//     });
+//   }
+
+//   form.querySelectorAll('.next-btn').forEach((button) => {
+//     button.addEventListener('click', function(event) {
+//       event.preventDefault();
+//       currentStep++;
+//       showStep(currentStep);
+//     });
+//   });
+
+//   form.querySelectorAll('.previous-btn').forEach((button) => {
+//     button.addEventListener('click', function(event) {
+//       event.preventDefault();
+//       currentStep--;
+//       showStep(currentStep);
+//     });
+//   });
+// });
