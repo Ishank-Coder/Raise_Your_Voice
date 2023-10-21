@@ -159,6 +159,12 @@
     background-color: #0f3950;
     transition: .5s ease;
   }
+  .homea{
+    text-decoration: none;
+  }
+  .homea:hover{
+    text-decoration: none;
+  }
   
   .login-btn:hover {
     color: #1e1e2b;
@@ -1496,7 +1502,10 @@
   .footer-distributed form input{
       height: 55px;
       margin-bottom: 15px;
+      margin-top: 25px;
   }
+
+input[type="text"] {}
   
   .footer-distributed form textarea{
       height: 100px;
@@ -1506,7 +1515,7 @@
   .footer-distributed form .footbut{
       border-radius: 3px;
       background-color: #6BE9D1;
-      color: #ffffff;
+      color: #0f3950;
       border: 0;
       padding: 15px 50px;
       font-weight: bold;

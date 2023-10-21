@@ -7,14 +7,16 @@ def process_form(request,db):
     # Format it as 'YYYYMMDDHHMM'
     timestamp_str = now.strftime("%Y%m%d%H%M")
     # name = request.form.get('name')
+   
 # Get the current date and time
     orgname = request.form.get('orgname')
     typegr = request.form.get('typegr')
     category = request.form.get('category')
-    nam = request.form.get('Nam')
-    ic(nam)
     grievanceid = typegr[0:2] + timestamp_str + category[0:2] + orgname[0:4]
     #facutly details
+    name0 = request.form.get('Name0')
+    name1 = request.form.get('Name1')
+    ic(name1)
     desig = request.form.get('Desig')
     dept = request.form.get('dept')
     mail = request.form.get('Mail')
@@ -34,8 +36,8 @@ def process_form(request,db):
     # gender = request.form.get('Gender')
     # who = request.form.get('nickName')
     status = "new"
-    datastu = {"name":nam,'grievanceid':grievanceid,"year":year,"branch":branch,"email":email,"Phoneno":phno,"detailedgr":detailedgr,"more":details,"status":status}
-    datafac = {"name":nam,'grievanceid':grievanceid,"designation":desig,"Department":dept,"email":mail,"Phoneno":phnumber,"detailedgr":detailedgr,"more":details,"status":status}
+    datastu = {"name":name1,'grievanceid':grievanceid,"year":year,"branch":branch,"email":email,"Phoneno":phno,"detailedgr":detailedgr,"more":details,"status":status}
+    datafac = {"name":name0,'grievanceid':grievanceid,"designation":desig,"Department":dept,"email":mail,"Phoneno":phnumber,"detailedgr":detailedgr,"more":details,"status":status}
     if category=="faculty":    
         send_data(typegr,datafac,db,category,phnumber) 
     else:

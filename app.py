@@ -67,7 +67,7 @@ def att():
 @app.route('/popup', methods=["GET",'POST'])
 def popsup():
     newji,username=popup(request,db)
-            
+             
     new,pending,closed,data = displaypopup(newji,db)
     flag_new,flag_pend,flag_closed= True,True,True
     if len(new)==0:
