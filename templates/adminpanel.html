@@ -10,9 +10,7 @@
     <script type="text/javascript" src="{{ url_for('static', filename='js/adminpanel.js') }}"></script>
 </head>
 <body>
-    <div id="piechart" class="chart" style="width: 100%; height: 700px; display: flex; margin-left: 250px; justify-content: center;margin-top: 100px;"></div>
-    <div id="daywise-chart" class="chart" style="width: 80%; height: 700px; margin-left: 230px; justify-content: center; display: flex; margin-top: 30px;"></div>
-    <div class="header">
+    <section class="new">
         <div class="side-nav">
             <a href="#" id="logo" class="logo">
                 <img src="{{url_for('static', filename= 'images/Group25.png')}}" class="logo-img">
@@ -53,8 +51,43 @@
                 <div class="active"></div>
             </ul>
         </div>
-    </div>
+        <div id="piechart" class="chart" ></div>
+        <div id="daywise-chart" class="chart"></div>
 
+        <div id="NewTickets">
+          <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+              <tbody>
+                {% for name in new %}
+                <tr>
+
+                  <td><a href="{{ url_for('details',name = name) }}"> {{ name[0] }}</a></td>
+                  <td><a href="{{ url_for('details',name = name) }}"> {{ name[1] }}</a></td>
+                  <!-- <td class="itemtab"><span class="an">●</span></td>
+                  <td class="itemtab"><a class =itemtable id="new_action1" href="{{ url_for('details',name = name) }}"><i class="fa fa-plus"></i></a></td> -->
+                </tr>
+                {% endfor %}
+                {% for name in pending %}
+                <tr>
+                  <td>{{ name[0] }}</td>
+                  <td>{{ name[1] }}</td>
+                  <!-- <td class="itemtab"><span class="ap">●</span></td> -->
+                  <td class="itemtab">
+                    <a class="itemtable history-button" href="#">
+                      <i class="fa fa-history" aria-hidden="true"></i>
+                    </a>
+                  </td>
+                  
+                  <td class="itemtab"><a class =itemtable href="{{ url_for('details',name = name) }}"><i class="fa fa-plus"></i></a></td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+  
+            <p></p>
+          </div>
+        </div>
+    </section>
     <script>
     </script>
 </body>
