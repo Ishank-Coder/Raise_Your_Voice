@@ -5,11 +5,75 @@ A* {
     font-family: "Poppins", sans-serif;
 }
 
+body{
+    background: #dbd9d9;
+}
+
 .header {
     width: 100%;
     height: 100vh;
     background: #dbd9d9;
 }
+.chart{ 
+    width: 80%; 
+    height: 700px;
+    display: flex; 
+    margin-left: 325px;
+    justify-content: center;
+    margin-top: 100px;}
+
+.new{
+    margin-bottom: 110px;
+    margin-top: 110px;
+    }
+  
+  
+    table{
+      width: 70%;
+      table-layout: fixed;
+      background-color: white;
+    }
+
+    .tbl-content{
+        height:460px; 
+        width: 80%; 
+        overflow-x:auto;
+        border-radius: 20px;
+        margin-top: 200px;
+        justify-content: center;
+        text-align: center;
+        margin-left: 200px;
+        background-color: white;
+        box-shadow: 5px 5px 50px 5px;
+        margin-left: 320px;
+      }
+      
+    td{
+        padding: 15px;
+        text-align: left;
+        vertical-align:middle;
+        font-weight: 300;
+        font-size: 35px;
+        color:black;
+        border-bottom: solid 5px  #dbd9d9;
+        background-color: white;
+        font-family: sans-serif;
+        width: 119%;
+      }
+
+    .itemtab{
+        padding: 5px;
+        text-align: center;
+        vertical-align:middle;
+        width: 10%;
+        color:lightslategrey;
+      }
+    .itemtable{
+        color:lightslategrey;
+      }
+    .itemtable:hover::after{
+        color:grey;
+      }
 
 .side-nav {
     width: 220px;
@@ -22,10 +86,6 @@ A* {
     transition: all 0.5s ease;
 }
 
-.chart{
-    color: aqua;
-    background: #ffffff;
-}
 .ptag {
     margin-right: 20px;
     margin-left: 20px;
