@@ -1,9 +1,9 @@
-
-def process_form(request,db):
+from icecream import ic
+def process_form(request,db,storage):
     from flask import Flask, redirect, render_template, url_for
     from datetime import datetime
     now = datetime.now()
-    from icecream import ic
+
     # Format it as 'YYYYMMDDHHMM'
     timestamp_str = now.strftime("%Y%m%d%H%M")
     # name = request.form.get('name')
@@ -30,7 +30,7 @@ def process_form(request,db):
     
     detailedgr=request.form.get('grievance')
     details=request.form.get('details')
-    
+    file = request.files['file']
     # tog = request.form.get('Detail')
     # Rollno = request.form.get('RollNo')
     # gender = request.form.get('Gender')
@@ -38,10 +38,11 @@ def process_form(request,db):
     status = "new"
     datastu = {"name":name1,'grievanceid':grievanceid,"year":year,"branch":branch,"email":email,"Phoneno":phno,"detailedgr":detailedgr,"more":details,"status":status}
     datafac = {"name":name0,'grievanceid':grievanceid,"designation":desig,"Department":dept,"email":mail,"Phoneno":phnumber,"detailedgr":detailedgr,"more":details,"status":status}
-    if category=="faculty":    
-        send_data(typegr,datafac,db,category,phnumber) 
+
+    if category=="FacultyGrievance":    
+        send_data(typegr,datafac,db,category,phnumber,storage,file) 
     else:
-        send_data(typegr,datastu,db,category,phno)
+        send_data(typegr,datastu,db,category,phno,storage,file)
     
     # data = {"name": name,"gender" : gender,"email": email,"num": number,"sem": sem,"branch": branch,"RollNo":Rollno ,"Type":who,"status":ds}
     
@@ -62,13 +63,47 @@ def at(request,db):
 
     
     
-def send_data(type,data,db,category,num):
+def send_data(type,data,db,category,num,storage,file):
     # data = request.json  # Assuming you're receiving data as JSON in the request
     ref = db.reference()
     # # Replace with the desired location in the database
     # ref.child("name").push(name)
     # return 'Data sent successfully'
+
+    folder_path = f"{num}/"  # Assuming 'num' is the folder name
+
+    # Construct the full file path (including the folder)
+    full_file_path = folder_path + file.filename
+
+    # Create a Blob object with the full file path
+    blob = storage.bucket().blob(full_file_path)
+
+    # Upload the file to Firebase Storage
+    blob.upload_from_string(file.read(), content_type=file.content_type)
+
+    # Add the file URL to the data
+    storage_url = blob.public_url
+
+    data['file_url'] = storage_url    
+
+
+    # storage_ref = storage.bucket().blob(file.filename)
+    # storage_ref.upload_from_string(file.read(), content_type=file.content_type)
+    
+    # folder_path = f"{num}/" 
+
    
+    # full_file_path = folder_path + file.filename
+
+    # # Upload the file to Firebase Storage
+    # storage_ref = storage.bucket().blob(full_file_path)
+    # storage_ref.upload_from_string(file.read(), content_type=file.content_type)
+
+    # # Add the file URL to the data
+    # storage_url = f"gs://{storage_ref.bucket.name}/{full_file_path}"
+    # data['file_url'] = storage_url
+    
+    # ic(data)
     ref.child("ConvenerRelatedGrievance").child(type).child(num).child(category).set(data)
 
 def popup(request,db):

@@ -2,7 +2,7 @@ from flask import Flask, redirect, render_template, url_for
 from flask import Flask, session, request, render_template,redirect
 import firebase_admin
 from firebase_admin import credentials
-from firebase_admin import db
+from firebase_admin import db, storage
 from dataEntry import process_form,popup
 from dataDisplay import display, displaypopup
 import dataEntry
@@ -46,14 +46,16 @@ def grievancelist():
 
 cred = credentials.Certificate('static//grievance-2ba24-firebase-adminsdk-kg434-599944587c.json')
 firebase_admin.initialize_app(cred, {
-    'databaseURL': 'https://grievance-2ba24-default-rtdb.firebaseio.com/'
+    'databaseURL': 'https://grievance-2ba24-default-rtdb.firebaseio.com/',
+    'storageBucket': 'grievance-2ba24.appspot.com'
 })
+
 
 
 @app.route('/process_formty', methods=['POST'])
 def process_formty():
     
-    process_form(request,db)
+    process_form(request,db,storage)
     return redirect(url_for("home"))  # Make sure you have a return statement here
 
 
