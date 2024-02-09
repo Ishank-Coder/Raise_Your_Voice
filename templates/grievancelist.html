@@ -27,91 +27,35 @@
         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
       </ul>
     </nav>
-    {% if flag_new %}
+    
     <section class="new">
       <!-- <form action="/detail" method="POST" class="form_main2"> -->
       <div id="NewTickets">
         <div class="tbl-content">
           <table cellpadding="0" cellspacing="0" border="0">
             <tbody>
-              {% for name in new %}
+              {% for name in grlist %}
+              
               <tr>
-                <td><a href="{{ url_for('details',name = name) }}"> {{ name[0] }}</a></td>
-                <td><a href="{{ url_for('details',name = name) }}"> {{ name[1] }}</a></td>
+                <td><a href="{{ url_for('details',name=name[1]) }}"> {{ name[0] }}</a></td>
+                <td><a href="{{ url_for('details',name=name[1]) }}"> {{ name[1] }}</a></td>
+                {% if name[2] == 'new' %}
                 <td class="itemtab"><span class="an">●</span></td>
-                <td class="itemtab"><a class =itemtable id="new_action1" href="{{ url_for('details',name = name) }}"><i class="fa fa-plus"></i></a></td>
-              </tr>
-              {% endfor %}
-              {% for name in pending %}
-              <tr>
-                <td>{{ name[0] }}</td>
-                <td>{{ name[1] }}</td>
+                {% else %}
                 <td class="itemtab"><span class="ap">●</span></td>
-                <td class="itemtab">
-                  <a class="itemtable history-button" href="#">
-                    <i class="fa fa-history" aria-hidden="true"></i>
-                  </a>
-                </td>
-                
-                <td class="itemtab"><a class =itemtable href="{{ url_for('details',name = name) }}"><i class="fa fa-plus"></i></a></td>
+                {% endif %}
+                <td class="itemtab"><a class =itemtable id="new_action1" href="{{ url_for('details',name = name[1]) }}"><i class="fa fa-plus"></i></a></td>
               </tr>
-              {% endfor %}
+              
             </tbody>
-          </table>
-
-          <p></p>
-        </div>
-      </div>
-      <!-- </form> -->
-    </section>
-    {% else %} {% endif %} {% if flag_pend %}
-    <!-- <section class="new">
-      <div id="OngoingTickets">
-         <div class="tbl-content">
-          <table cellpadding="0" cellspacing="0" border="0">
-            <tbody>
-              {% for name in pending %}
-              <tr>
-                <td>{{ name }}</td>
-                <td class="itemtab"><span class="ap">●</span></td>
-                <td class="itemtab">
-                  <a class="itemtable history-button" href="#">
-                    <i class="fa fa-history" aria-hidden="true"></i>
-                  </a>
-                </td>
-                
-                <td class="itemtab"><a class =itemtable id="new_action" href="#"><i class="fa fa-plus"></i></a></td>
-              </tr>
-              {% endfor %}
-            </tbody>
+            {% endfor %}
           </table>
 
           <p></p>
         </div>
       </div>
     </section>
-    {% else %} {% endif %} {% if flag_closed %}
-    <section class="new">
-      <div id="ClosedTickets">
-        
-        <div class="tbl-content">
-          <table cellpadding="0" cellspacing="0" border="0">
-            <tbody>
-              {% for name in closed %}
-              <tr>
-                <td>{{ name }}</td>
-                <td><span class="ac">●</span></td>
-                
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-
-          <p></p>
-        </div>
-      </div>
-    </section>
-    {% else %} {% endif %} -->
+    
 
     <div id="history-popup" class="popup1">
       <div class="popup-content1">

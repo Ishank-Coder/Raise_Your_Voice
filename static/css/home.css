@@ -964,13 +964,14 @@
     font-size: 1.025em;
     font-weight: 600;
     letter-spacing: 0.1em;
-    z-index: 20;
+    z-index: 0;
     transition: all 0.3s ease-in-out;
    }
    
    .fyg-btn:hover .filespan {
     color: #6BE9D1;
     animation: scaleUp 0.3s ease-in-out;
+    z-index: 1;
    }
    
    @keyframes scaleUp {
@@ -1030,7 +1031,7 @@
         font-size: 0.725em;
         font-weight: 600;
         letter-spacing: 0.1em;
-        z-index: 20;
+        z-index: 0;
         transition: all 0.3s ease-in-out;
        }
        
@@ -1505,7 +1506,6 @@
       margin-top: 25px;
   }
 
-input[type="text"] {}
   
   .footer-distributed form textarea{
       height: 100px;

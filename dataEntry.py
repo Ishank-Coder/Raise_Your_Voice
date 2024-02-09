@@ -1,4 +1,5 @@
 from icecream import ic
+
 def process_form(request,db,storage):
     from flask import Flask, redirect, render_template, url_for
     from datetime import datetime
@@ -51,14 +52,14 @@ def process_form(request,db,storage):
 
 
 
-def at(request,db):
+def at(request,db,pdata):
     from flask import Flask, redirect, render_template, url_for 
     name = request.form.get('action')
     email = request.form.get('status')
-    
+    ic(pdata)
     data = {"name": name,"gender" : email}
     ref = db.reference()
-    ref.child("ConvenerRelatedGrievance").child("Exam").child("7060078507").child("ActionTaking").child("Action24").set(data)
+    ref.child("ConvenerRelatedGrievance").child("Exam").child(pdata['Phoneno']).child("ActionTaking").child("Action24").set(data)
 
 
     

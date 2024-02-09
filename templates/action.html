@@ -19,7 +19,7 @@
             <h1>Grievance Raised.</h1>
             <div class="cta">
                 
-                {% for key, value in toll.items() %}
+                {% for key, value in dets.items() %}
                 {% set index = loop.index0 %}
                 <p style="color: rgb(0, 0, 0);"><strong>{{ key }}</strong> {{ value }}</p>
                 {% endfor %}

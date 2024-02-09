@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/scrollbar.css') }}"> -->
-    <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-<!-- Bootstrap JS -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </head>
 <body link="#000" alink="#000" vlink="#000">
@@ -20,10 +19,6 @@
         <nav class="navbar">
             <div class="logo"><img src="{{url_for('static', filename= 'images/Group25.png')}}" alt="logo"></div>
             <ul class="nav-list">
-                <!-- <li> <a href="#home">Home</a></li>
-                <li> <a href="#about">About</a></li>
-                <li> <a href="#services">Services</a></li>
-                <li> <a href="#contact">Contact Us</a></li> -->
                 <button class="login-btn" onclick="showPopup()"><span class="loginspan">Login</span></button>
             </ul>
            
@@ -77,12 +72,12 @@
                   </button> -->
               <!-- </div> -->
               <!-- <div class="formcontainer"> -->
-                <form action="/popup" method="POST" class="form_main">
-                    <button onclick="closePopup()" class="close-button">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#2e2e2e" width="24" height="24">
-                          <path d="M19.293 5.293l-4.586 4.586 4.586 4.586-1.414 1.414-4.586-4.586-4.586 4.586-1.414-1.414 4.586-4.586-4.586-4.586 1.414-1.414 4.586 4.586 4.586-4.586 1.414 1.414z"/>
-                        </svg>
-                      </button>
+                  <button onclick="closePopup()" class="close-button">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#2e2e2e" width="24" height="24">
+                        <path d="M19.293 5.293l-4.586 4.586 4.586 4.586-1.414 1.414-4.586-4.586-4.586 4.586-1.414-1.414 4.586-4.586-4.586-4.586 1.414-1.414 4.586 4.586 4.586-4.586 1.414 1.414z"/>
+                      </svg>
+                    </button>
+                <form action="/login" method="POST" class="form_main">
                     <p class="heading">Login</p>
                     <div class="inputContainer">
                         <svg class="inputIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2e2e2e" viewBox="0 0 16 16">
@@ -101,7 +96,7 @@
                            
                 <!-- <button id="button">Submit</button> -->
                 <!-- <a href="\grievancelist.html"> -->
-                <button id="button" class="cssbuttons-io-button"> Log In
+                <button type="submit" id="button" class="cssbuttons-io-button"> Log In
                     <div class="icon">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
                     </div>
@@ -186,6 +181,7 @@
       }
       
       function closePopup() {
+        
         var popup = document.querySelector('.popup-overlay');
         popup.style.display = 'none';
       }
