@@ -26,7 +26,7 @@ def getlist(request,db):
     #                 if result:
     #                     return result
     # res = search_value(data, "new")
-    
+    print("helllo")
     # if res:
     #     node_key, parent_key = res
     #     print("Node key:", node_key)
